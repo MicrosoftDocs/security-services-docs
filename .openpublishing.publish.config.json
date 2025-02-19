@@ -18,15 +18,6 @@
   "branches_to_filter": [],
   "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/security-services-docs",
   "git_repository_branch_open_to_public_contributors": "main",
-  "need_preview_pull_request": true,
-  "dependent_repositories": [
-    {
-      "path_to_root": "_themes",
-      "url": "https://github.com/Microsoft/templates.docs.msft",
-      "branch": "main",
-      "branch_mapping": {}
-    }
-  ],
   "branch_target_mapping": {},
   "targets": {}
 }
