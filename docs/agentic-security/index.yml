@@ -1,0 +1,104 @@
+### YamlMime:Landing
+
+title: Project Perception 
+summary: Coordinated, multi-agent defense system to protect continuously, respond faster, and reduce risk.
+
+metadata:
+  title: Project Perception documentation
+  description: Project Perception is a coordinated, multi-agent defense system designed to help security teams protect continuously, respond faster, and reduce risk.
+  ms.service: defender-xdr
+  ms.topic: landing-page
+  ms.collection:
+  - m365-security
+  - essentials-navigation
+  - tier1
+  ms.custom: intro-hub-or-landing
+  author: mjcaparas
+  ms.author: macapara
+  ms.date: 07/27/2026
+  ms.localizationpriority: high
+
+landingContent:
+  - title: About Project Perception
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Project Perception?
+            url: agentic-security-overview.md
+          - text: Key concepts
+            url: agentic-security-concepts.md
+
+
+  - title: Get started
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Get started with Project Perception
+            url: agentic-security-get-started.md
+          - text: Interact with Project Perception using chat
+            url: agentic-security-chat.md
+          - text: Use the Project Perception overview and navigation
+            url: agentic-security-dashboard.md
+
+  - title: Set up and run agents
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Work with agents
+            url: agentic-security-agents.md
+
+  - title: Use red team agents to simulate attacks and expose gaps
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Recon Agent
+            url: recon-agent.md
+          - text: Red team agent considerations
+            url: agentic-security-red-agent-considerations.md
+
+  - title: Use blue team agents to detect and investigate threats
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Attack Investigation Agent
+            url: attack-investigation-agent.md
+          - text: Detection Authoring Agent
+            url: detection-authoring-agent.md
+          - text: Triage Agent
+            url: triage-agent.md
+          - text: Threat Intelligence Agent
+            url: threat-intelligence-agent.md
+
+  - title: Use green team agents to harden your security posture
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Posture Prioritization Agent
+            url: posture-prioritization-agent.md
+
+  - title: Run security workflows using playbooks
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Work with playbooks
+            url: agentic-security-playbooks.md
+          - text: Start playbooks from Defender surfaces
+            url: agentic-security-integration-scenarios.md
+
+  - title: Monitor and govern agent work
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: View and manage sessions
+            url: agentic-security-sessions.md
+          - text: Work with a session
+            url: agentic-security-session-details.md
+          - text: Approve, reject, or stop agentic work
+            url: agentic-security-supervise-work.md
+
+  - title: Reference
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Application card for Project Perception
+            url: agentic-security-application-card.md

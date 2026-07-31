@@ -1,0 +1,1 @@
+Access to agents is controlled by existing security roles in Microsoft Defender. Users with the **Security Reader** or **Security Admin** role can view and interact with agent sessions once the agent is set up.
