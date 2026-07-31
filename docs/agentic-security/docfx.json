@@ -40,7 +40,8 @@
     "globalMetadata": {
       "feedback_system": "Standard",
       "breadcrumb_path": "~/breadcrumb/agentic-security/toc.yml",
-      "permissioned-type": "public"
+      "permissioned-type": "public",
+      "uhfHeaderId": "MSDocsHeader-Security"
     },
     "fileMetadata": {},
     "template": []
