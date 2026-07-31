@@ -4,8 +4,8 @@ To stop a session:
 1. Select **Stop**.
 1. Review the warning message. Stopping a session:
    - Terminates all ongoing agent work immediately
-   - Changes the session status to **Failed**
-   - Marks all not-yet-completed tasks as **Failed**
+   - Changes the session status to **Stopped**
+   - Marks all unfinished agent activities as **Stopped**
    - Prevents the session from being resumed
 1. Select **Stop session** to confirm.
 
