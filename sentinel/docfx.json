@@ -40,7 +40,8 @@
     "globalMetadata": {
       "breadcrumb_path": "~/breadcrumb/sentinel/toc.yml",
       "feedback_system": "Standard",
-      "permissioned-type": "public"
+      "permissioned-type": "public",
+      "uhfHeaderId": "MSDocsHeader-Security"
     },
     "fileMetadata": {},
     "template": []
