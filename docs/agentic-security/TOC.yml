@@ -1,2 +1,62 @@
-- name: Index
-  href: index.md
+- name: Project Perception
+  href: index.yml
+  expanded: true
+  items:
+  - name: Overview
+    items:
+    - name: What is Project Perception?
+      href: agentic-security-overview.md
+    - name: Key concepts
+      href: agentic-security-concepts.md
+    - name: Agent categories
+      href: agentic-security-agent-categories.md
+  - name: Get started
+    items:
+    - name: Get started
+      href: agentic-security-get-started.md
+    - name: Use the overview and navigation
+      href: agentic-security-dashboard.md
+  - name: Interact with Project Perception using chat
+    href: agentic-security-chat.md
+  - name: Set up and run agents
+    items:
+    - name: Work with agents
+      href: agentic-security-agents.md
+    - name: Use red team agents to simulate attacks and expose gaps
+      items:
+      - name: Recon Agent
+        href: recon-agent.md
+      - name: Red team agent considerations
+        href: agentic-security-red-agent-considerations.md
+    - name: Use blue team agents to detect and investigate threats
+      items:
+      - name: Triage Agent
+        href: triage-agent.md
+      - name: Attack Investigation Agent
+        href: attack-investigation-agent.md
+      - name: Threat Intelligence Agent
+        href: threat-intelligence-agent.md
+      - name: Detection Authoring Agent
+        href: detection-authoring-agent.md
+    - name: Use green team agents to harden your security posture
+      items:
+      - name: Posture Prioritization Agent
+        href: posture-prioritization-agent.md
+  - name: Run security workflows using playbooks
+    items:
+    - name: Work with playbooks
+      href: agentic-security-playbooks.md
+    - name: Start playbooks from Defender surfaces
+      href: agentic-security-integration-scenarios.md
+  - name: Monitor and govern agent work
+    items:
+    - name: View and manage sessions
+      href: agentic-security-sessions.md
+    - name: Work with a session
+      href: agentic-security-session-details.md
+    - name: Approve, reject, or stop agentic work
+      href: agentic-security-supervise-work.md
+  - name: Reference
+    items:
+    - name: Application card for Project Perception
+      href: agentic-security-application-card.md

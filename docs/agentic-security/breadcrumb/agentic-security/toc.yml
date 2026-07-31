@@ -1,3 +1,7 @@
-- name: '<please enter product name here>'
-  tocHref: /
-  topicHref: /
+- name: 'Microsoft Security'
+  tocHref: /security/
+  topicHref: /security/index
+  items:
+  - name: 'Project Perception'
+    tocHref: /security/agentic-security/
+    topicHref: /security/agentic-security/index
