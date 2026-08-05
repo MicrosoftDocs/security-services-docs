@@ -103,20 +103,19 @@ Perception agents are designed to adapt based on operational context while conti
 
 - **Playbooks**: Playbooks provide reusable, parameterized workflows that coordinate one or more agents. A single agent can participate in multiple playbooks, and new playbooks can coordinate agents in novel sequences.
 - **Integration in Defender experiences**: Agentic workflows can be initiated from multiple surfaces in the Microsoft Defender portal, including incident pages and threat intelligence article pages, enabling contextual entry points without navigating to Perception directly.
-- **Case integration**: Sessions can optionally link to cases in Microsoft Defender, enabling security teams to track outcomes from both human and agent work within the same workflow.
-
 ## Intended uses
 
 Perception is designed for security professionals and IT administrators who need AI-assisted and autonomous support for security operations workflows. The following table describes the intended use cases, the playbooks that support them, and the agents involved.
 
 | Use case | Playbook | Agents |
 | --- | --- | --- |
-| **Threat intelligence extraction**: Analyze a threat intelligence article to extract structured intelligence objects for use in security operations. | Extract threat intelligence | Threat Intelligence Agent |
+| **Alert triage**: Validate an alert for false positives so real threats get further attention. | Triage alert | Triage Agent |
 | **End-to-end threat defense**: Take a threat intelligence source and produce a comprehensive defensive response, including attack path mapping, prioritized posture recommendations, and detection coverage. | Protect against a threat | Threat Intelligence Agent, Recon Agent, Posture Prioritization Agent, Detection Authoring Agent |
-| **Autonomous incident investigation**: Perform a tier-2 investigation of a Defender incident and produce a complete attack story with verdict, timeline, attack graph, affected entities, and remediation actions. | Investigate incident | Attack Investigation Agent |
+| **Autonomous incident investigation**: Perform a tier-2 investigation of a Defender incident and produce a complete attack story with verdict, timeline, attack graph, affected entities, and remediation actions. | Investigate attack | Attack Investigation Agent |
+| **Threat intelligence extraction**: Analyze a threat intelligence article to extract structured intelligence objects for use in security operations. | Extract threat intelligence | Threat Intelligence Agent |
 | **Attack path discovery**: Perform read-only, attacker-style reconnaissance on an Azure environment to discover how an adversary could move through it and reach valuable assets. | Identify attack paths | Recon Agent |
-| **Identity risk evaluation**: Evaluate identity exposure by analyzing privilege relationships, sensitive identities, and lateral movement opportunities in an Azure environment. | Assess identity risks | Recon Agent |
 | **Posture remediation prioritization**: Build a prioritized remediation plan across clouds, devices, and AI. This playbook weighs exposure, exploitability, and asset context to target the highest-risk posture gaps. | Plan for posture remediation | Posture Prioritization Agent |
+| **Identity risk evaluation**: Evaluate identity exposure by analyzing privilege relationships, sensitive identities, and lateral movement opportunities in an Azure environment. | Assess identity risks | Recon Agent |
 
 ## Models and training data
 

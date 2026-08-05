@@ -295,12 +295,19 @@ To set up this agent, follow the steps in [Set up an agent](agentic-security-get
 
 For ways to start a session, see [Start a new session](agentic-security-sessions.md#start-a-new-session).
 
-Use these steps to start a session:
+The Recon Agent participates in the following playbooks:
+
+| Playbook | Required input |
+|---|---|
+| **Assess identity risks** | An Azure subscription and managed identity. |
+| **Identify attack paths** | An Azure subscription. |
+| **Protect against a threat** | A threat intelligence article. |
+
+Use these steps to start an **Assess identity risks** session:
 
 1. In the navigation pane, select **Perception** > **Sessions**.
 1. Select **New session**.
-
-1. Choose one of the Recon Agent playbooks from the playbook list: **Assess identity risks**.
+1. Select the **Assess identity risks** playbook.
 
      :::image type="content" source="media/agentic-security-job.png" alt-text="Screenshot of options of jobs to complete.":::
 

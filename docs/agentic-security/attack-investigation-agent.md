@@ -26,7 +26,7 @@ appliesto:
 
 The Attack Investigation Agent is an autonomous tier 2 investigator for security operations teams. Starting from a single alert or incident, the agent correlates signals in Microsoft Defender XDR to reconstruct the attack story, scope, and impact.
 
-You can start an investigation with or without prior triage by an analyst or the Security Alert Triage Agent. This article describes the agent's capabilities and prerequisites. It also explains how to set up the agent, run and monitor a session, and review the results.
+You can start an investigation with or without prior triage by an analyst or the Triage Agent. This article describes the agent's capabilities and prerequisites. It also explains how to set up the agent, run and monitor a session, and review the results.
 
 ## Key capabilities
 
@@ -92,7 +92,7 @@ This agent runs through the following playbook:
 
 | Playbook | Required input |
 |---|---|
-| **Investigate Incident** | The ID of a single alert or incident from the Microsoft Defender portal. |
+| **Investigate attack** | The ID of a single alert or incident from the Microsoft Defender portal. |
 
 > [!NOTE]
 > You can also start this agent directly from an alert or incident detail page in the Defender portal. For more information, see [Run playbooks from incidents and threat intelligence](agentic-security-integration-scenarios.md).
@@ -139,4 +139,4 @@ The report appears as a Markdown file in the **Artifacts** section of the sessio
 - [Work with agents](agentic-security-agents.md)
 - [View and manage sessions](agentic-security-sessions.md)
 - [Recon Agent](recon-agent.md)
-- [Security Alert Triage Agent](triage-agent.md)
+- [Triage Agent](triage-agent.md)

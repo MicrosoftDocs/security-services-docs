@@ -207,7 +207,7 @@ You can start a Triage Agent session from the **Sessions** page or from a new ch
 
 1. In the Microsoft Defender portal, select **Perception** > **Sessions**.
 1. Select **New session**.
-1. In the session panel, select the **Triage Agent** playbook.
+1. In the session panel, select the **Triage alert** playbook.
 1. Provide the required input:
 
    |Field|Description|
@@ -221,7 +221,7 @@ The session opens with an **In progress** status. The agent displays its reasoni
 ### Start a session from a new chat
 
 1. In the Microsoft Defender portal, select **Perception** > **New chat**.
-1. In the chat options, select the **Triage Agent** playbook.
+1. In the chat options, select the **Triage alert** playbook.
 1. Select a new alert to triage. Only supported alerts can run.
 
 In this chat option, you can also chat over the agent playbook outputs.
