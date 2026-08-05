@@ -11,7 +11,7 @@ ms.collection:
 - security-copilot
 - magic-ai-copilot
 ms.topic: how-to
-ms.date: 07/31/2026
+ms.date: 08/05/2026
 ms.update-cycle: 180-days
 ai-usage: ai-assisted
 ContentLastModified: 06/03/2026
@@ -86,34 +86,15 @@ The following products are essential for the optimal functioning of the Recon Ag
 
 ### Additional permissions required
 
-Setting up the Recon Agent requires the **Azure User Access Administrator** role on the target subscription. This role is needed to grant permissions to the agent identity. We recommend using [Delegate Azure role assignment management to others with conditions](/azure/role-based-access-control/delegate-role-assignments-portal) when delegating this permission to Security Admins.
+The Recon Agent requires two additional permission sets to perform reconnaissance. Ensure the user granting these permissions has the roles listed below.
 
+| Role required to grant permissions | Permissions to grant to the Recon Agent |
+|---|---|
+| Privileged Role Administrator (Microsoft Entra role) | **Microsoft Graph API permissions:**<br><br>- `User.Read.All`<br>- `Organization.Read.All`<br>- `Group.Read.All`<br>- `GroupMember.Read.All`<br>- `Application.Read.All`<br>- `DelegatedPermissionGrant.Read.All`<br>- `Policy.Read.All`<br>- `RoleManagement.Read.Directory`<br>- `AuditLog.Read.All` |
+| Role Based Access Control Administrator on the subscription that is the target environment for the Recon Agent | **Azure RBAC roles (assign at subscription scope):**<br><br>- Reader<br>- Key Vault Reader<br>- Log Analytics Reader<br>- Security Reader |
 
-### Permissions granted to the agent
+After the Recon Agent’s Agent ID has been created, use the scripts below to assign the permissions outlined in the prior section. The scripts require the Agent ID as an input.
 
-During the agent configuration process, the user must grant the agent specific permissions to ensure optimal functionality. Limiting the permissions granted to the agent can restrict its capabilities. Please ensure that your security team has approved these permission grants for the Recon Agent.
-
-- **Graph API Permissions:**
-    - User.Read.All
-    - Organization.Read.All
-    - Group.Read.All
-    - GroupMember.Read.All
-    - Application.Read.All
-    - DelegatedPermissionGrant.Read.All
-    - Policy.Read.All
-    - RoleManagement.Read.Directory
-    - AuditLog.Read.All
-
-- **Azure RBAC (assign at subscription scope):**
-    - Reader
-    - Key Vault Reader
-    - Log Analytics Reader
-    - Security Reader
-
-
-#### Grant required permissions using PowerShell
-
-After the Recon Agent's Agent ID has been created, use the scripts below to assign the permissions outlined in the prior section. The scripts require the Agent ID as an input.
 
 **Grant Graph API permissions**
 
@@ -196,6 +177,7 @@ foreach ($rid in $roleIds.Keys) {
 Write-Host "`n=== Summary ===" -ForegroundColor Cyan
 $results | Format-Table -AutoSize
 ```
+
 
 **Grant Azure RBAC permissions**
 
@@ -298,14 +280,12 @@ $results | Format-Table -AutoSize
 
 
 
-In alignment with the principle of least privilege, assign the agent identity only the read-only permissions it needs.
-
 ## Set up the Recon Agent
 
 To set up this agent, follow the steps in [Set up an agent](agentic-security-get-started.md#path-2-set-up-and-run-an-agent).
 
 > [!NOTE]
-> During setup, select the Azure subscriptions this agent should operate on. This restricts all users of this agent to only the preconfigured subscriptions. You also need to grant the agent the [permissions listed above](#permissions-granted-to-the-agent) in the Azure portal.
+> During setup, select the Azure subscriptions this agent should operate on. This restricts all users of this agent to only the preconfigured subscriptions. You also need to grant the agent the [permissions listed above](#additional-permissions-required) in the Azure portal.
 
 ### Allow other users access
 
@@ -381,5 +361,3 @@ The output is shown as markdown files alongside the agent session.
 - [Monitor and manage agent sessions](agentic-security-sessions.md)
 - [Attack Investigation Agent](attack-investigation-agent.md)
 - [Triage Agent](triage-agent.md)
-
-
