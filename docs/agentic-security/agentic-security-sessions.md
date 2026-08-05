@@ -54,24 +54,28 @@ To toggle between views:
 
 You can start a session from multiple entry points in Project Perception. Choose the approach that best fits your current workflow:
 
-- [Start a session from the Sessions page](#start-a-session-from-the-sessions-page)
+- [Start a session using the New session button](#start-a-session-using-the-new-session-button)
 - [Start from a specific playbook](#start-from-a-specific-playbook)
 - [Start from an incident or threat intelligence article](#start-from-an-incident-or-threat-intelligence-article)
 - [Start from chat](#start-from-chat)
 
-### Start a session from the Sessions page
+### Start a session using the New session button
 
-Use the **New session** button, available from multiple locations in Project Perception:
+The **New session** button is available from the Sessions list and other locations in Project Perception.
 
-- **Sessions page**: Select **Perception** > **Sessions** > **New session**.
-- **Agent detail page**: Open an agent and select **New session**.
-- **Playbooks page**: Open a playbook and select **New session**.
-
-After selecting **New session**, choose a playbook from the list, provide the required inputs, and select **Start session**.
+1. Select **New session**.
+1. Choose a playbook from the list.
+1. Provide the required inputs.
+1. Select **Start session**.
 
 ### Start from a specific playbook
 
-Open the playbook you want to run and select **New session**. For the complete procedure, see [Start a session from a playbook](agentic-security-playbooks.md#start-a-session-from-a-playbook).
+Open the playbook details by using one of the following paths:
+
+- Go to **Perception** > **Playbooks**, and then select a playbook and run it.
+- Go to **Perception** > **Agents**, open an agent, and then select one of its playbooks.
+
+From the playbook details, select **New session**, provide the required inputs, and select **Start session**. For the complete procedure, see [Start a session from a playbook](agentic-security-playbooks.md#start-a-session-from-a-playbook).
 
 ### Start from an incident or threat intelligence article
 

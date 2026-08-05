@@ -10,7 +10,7 @@ ms.collection:
   - tier1
   - security-copilot
 ms.topic: how-to
-ms.date: 07/31/2026
+ms.date: 08/03/2026
 appliesto:
 - Project Perception
 ms.custom: Project Perception
@@ -78,7 +78,7 @@ To run the Posture Prioritization Agent in your environment, you need:
 - Microsoft Security Copilot
 
 
-Microsoft Defender for Cloud with Defender Cloud Security Posture Management (CSPM) enabled is optional but is required for Cloud signals. Enabling additional plans surfaces more posture signals for the agent to work with. For more information, see [What is Cloud Security Posture Management (CSPM)](/azure/defender-for-cloud/concept-cloud-security-posture-management).
+Microsoft Defender for Cloud with Defender Cloud Security Posture Management (CSPM) enabled is required on the subscription level for Cloud signals. Enabling additional plans surfaces more posture signals for the agent to work with. For more information, see [What is Cloud Security Posture Management (CSPM)](/azure/defender-for-cloud/concept-cloud-security-posture-management).
 
 For more information about unified RBAC in the Defender portal, see [Microsoft Defender XDR Unified role-based access control (RBAC)](/defender-xdr/manage-rbac).
 

@@ -159,26 +159,7 @@ The setup wizard walks you through assigning the agent an identity and the permi
 
 #### Assign an identity
 
-The agent requires an identity to operate. The wizard prompts you to select one of two identity types.
-
-:::image type="content" source="media/triage-agent/setup-assign-identity.png" alt-text="Screenshot of the Select a new identity screen in the Triage Agent setup wizard." lightbox="media/triage-agent/setup-assign-identity.png":::
-
-Select:
-
-- **Create a new agent identity (recommended)**: Automatically create a new Microsoft Entra Agent ID. Microsoft Entra creates Agent IDs specifically for AI agents. Using Agent IDs keeps access scoped, secure, and easier to manage. For more information, see [What are agent identities?](/entra/agent-id/identity-platform/what-is-agent-id).
-
-  OR
-
-- **Connect an existing user account**: Assign an existing user account as the agent identity. The agent inherits the user account's access and permissions. To use this identity option, you need to create the identity yourself and assign it the [permissions the agent requires](#triage-agent-required-permissions) before setup. For information on creating a user account, see [Create a new user](/entra/fundamentals/how-to-create-delete-users#create-a-new-user).
-
-  When you connect the agent to an account, we recommend setting a long account expiration date and closely monitoring its authentication status to ensure continuous operation of the agent. If authentication expires, the agent stops functioning until it's renewed.
-
-  The agent's specified user identity isn't compatible with Privileged Identity Management (PIM) or Temporary Access Pass (TAP) because they don't support long-term background operations.
-
-  > [!TIP]
-  > Use a dedicated identity account with the minimum required permissions for the agent. When creating the account, assign a distinct display name like *Triage Agent* to easily identify it in the Microsoft Defender portal.
-
-  **Set conditional access policies for Security Copilot** to enable the agent to function based on the user account created for it. For more information, see [Troubleshoot Conditional Access policies for Microsoft Security Copilot](/entra/identity/conditional-access/troubleshoot-security-copilot-policies).
+The agent requires a Microsoft Entra Agent ID to operate. The setup wizard automatically creates a new Agent ID. Microsoft Entra creates Agent IDs specifically for AI agents. Using an Agent ID keeps access scoped, secure, and easier to manage. For more information, see [What are agent identities?](/entra/agent-id/identity-platform/what-is-agent-id).
 
 > [!NOTE]
 > You can change the agent identity after setup as described in [Edit agent settings](#edit-agent-settings).
@@ -187,13 +168,9 @@ Select:
 
 In alignment with [the principle of least privileges](/entra/identity-platform/secure-least-privileged-access), we recommend assigning the agent identity only the [permissions the Triage Agent requires to perform its tasks](#triage-agent-required-permissions).
 
-- If you use an Agent ID, the dropdown only displays roles in your organization that have the permissions the agent needs. Select an existing role in your organization or automatically create a new role with the required permissions if you don't already have a suitable role set up.
+The dropdown only displays roles in your organization that have the permissions the agent needs. Select an existing role or automatically create a new role with the required permissions if you don't already have a suitable role.
 
-  :::image type="content" source="media/triage-agent/setup-assign-entra-agent-id.PNG" alt-text="Screenshot of the Create a new agent identity screen in the Triage Agent setup wizard." lightbox="media/triage-agent/setup-assign-entra-agent-id.PNG":::
-
-- If you use an existing user account, you need to [assign the required permissions](#triage-agent-required-permissions) to that identity before assigning the agent identity during setup - you can't do this from the setup wizard.
-
-  :::image type="content" source="media/triage-agent/setup-assign-user.PNG" alt-text="Screenshot of the Connect with an existing user account screen in the Triage Agent setup wizard" lightbox="media/triage-agent/setup-assign-user.PNG":::
+:::image type="content" source="media/triage-agent/setup-assign-entra-agent-id.PNG" alt-text="Screenshot of the Create a new agent identity screen in the Triage Agent setup wizard." lightbox="media/triage-agent/setup-assign-entra-agent-id.PNG":::
 
 ##### Triage Agent required permissions
 

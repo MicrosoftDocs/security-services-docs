@@ -70,7 +70,7 @@ The **Sessions** page lists all sessions across all agents. You can toggle betwe
 
 Select any session to open the session detail view, which shows agent activity, pending approval requests, and output files produced during the session.
 
-Users with **Run** access can select **Stop** to force a session to end. Stopping a session terminates all ongoing agent work and changes the session status to **Failed**.
+Users with **Run** access can select **Stop** to force a session to end. Stopping a session terminates all ongoing agent work and changes the session status to **Stopped**.
 
 For more information, see [View and manage sessions](agentic-security-sessions.md).
 
