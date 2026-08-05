@@ -99,7 +99,6 @@ Successful deployment requires coordinated preparation across identity, permissi
 - Use the mandatory human-in-the-loop (HITL) checkpoint to review and explicitly approve planned task lists before environment access.
 - Define organizational usage policy for which agents can be used, by whom, in which environments, and under what approvals.
 - Apply formal change management controls, especially for workflows involving active exploitation or environment changes.
-- Monitor Security Compute Unit (SCU) consumption during larger sessions to avoid impacting other workloads.
 - Introduce agents in nonproduction environments first to build operator readiness before broader rollout.
 
 ## Evidence of accuracy, performance, and generalizability

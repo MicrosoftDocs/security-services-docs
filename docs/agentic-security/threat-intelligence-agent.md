@@ -50,7 +50,6 @@ The Threat Intelligence Agent runs multi-step, AI-orchestrated analysis of threa
 The following products are required for the Threat Intelligence Agent:
 
 - Microsoft Defender XDR
-- Microsoft Security Copilot with provisioned Security Compute Units (SCUs)
 - Microsoft Defender Threat Intelligence (MDTI) for full TI data access and enrichment
 
 ### Permissions granted to the agent

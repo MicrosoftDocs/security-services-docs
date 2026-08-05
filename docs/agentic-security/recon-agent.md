@@ -77,7 +77,6 @@ The following products are essential for the optimal functioning of the Recon Ag
 - Microsoft 365 Defender XDR  
 - Defender for Cloud with Defender CSPM Plan 
 - An Azure subscription 
-- Microsoft Copilot SCU either via Microsoft 365 E5 or Security Copilot standalone access  
 
 ### Required permissions
 [!INCLUDE [permissions-table](includes/permissions-table.md)]

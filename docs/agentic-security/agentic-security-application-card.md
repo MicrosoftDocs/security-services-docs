@@ -49,7 +49,6 @@ The following table provides a glossary of key terms related to Perception.
 | Large language model (LLM) | AI models trained on large amounts of text data to predict words in sequences. LLMs are capable of performing various tasks such as text generation, summarization, translation, classification, and more. |
 | Plan instance | A specific execution of a playbook template for a given session. The plan instance includes the actual input values provided at runtime and is specific to that session. |
 | Responsible AI | Microsoft's policy, research, and engineering practices grounded in its AI principles and operationalized through the [Responsible AI standard](https://www.microsoft.com/ai/responsible-ai). |
-| Security Compute Unit (SCU) | The unit of compute capacity used to run Perception workloads. For more information, see [Understand SCUs](/copilot/security/security-compute-units-capacity). |
 | Session | The container for all work performed by agents. Sessions capture the full context of agentic activity, including inputs, conversations, artifacts produced, and outcomes achieved. Sessions are immutable records that serve as an audit trail for agentic work. |
 
 
@@ -69,7 +68,7 @@ The following table describes the key features and capabilities of Perception an
 | Posture prioritization | The Posture Prioritization Agent ranks security posture findings by real-world risk, evaluating severity, exploitability, active exploitation status, internet reachability, asset criticality, and attack-path context. |
 | Agent governance and management | Administrators can view all enabled agents, configure agent identities and permissions. |
 | Human oversight and supervision | Users can monitor in-progress sessions, approve or reject agent actions at approval gates, stop sessions, and redirect agents with alternative guidance. Sessions surface their reasoning transparently so analysts can review, validate, or override conclusions. |
-| Performance evaluation | Administrators and security engineers can track SCU consumption, understand security outcomes, and evaluate which agents and playbooks are suitable for further automation. |
+| Performance evaluation | Administrators and security engineers can track activity, understand security outcomes, and evaluate which agents and playbooks are suitable for further automation. |
 | In context playbook triggering | Playbooks can be started from other Microsoft Defender surfaces, including incident detail pages and threat intelligence article pages, without navigating to the Playbooks page directly. |
 
 Perception operates as an agentic system. To understand agent autonomy, consider:
