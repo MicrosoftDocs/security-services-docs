@@ -65,7 +65,6 @@ To run the Triage Agent in your environment, you need:
 
 |Prerequisite|Details|
 |---|---|
-|**Security Copilot**|Provisioned capacity in **Security Compute Units (SCU)**. See [Get started with Security Copilot](/copilot/security/get-started-security-copilot).|
 |**Security Copilot plugins**|The Triage Agent automatically activates these plugins: Microsoft Defender XDR, Microsoft Threat Intelligence, and Triage Agent. For more information, see [Plugins overview - Microsoft Security Copilot](/copilot/security/plugin-overview).|
 |**Alert-tuning rules**|Disable tuning rules that resolve the alerts you want the agent to triage. The agent doesn't triage resolved alerts. For more information, see [Tune an alert](/defender-xdr/investigate-alerts#tune-an-alert).|
 |**Unified RBAC**|Enable unified role-based access control and activate the relevant workloads for the alert types you want to triage. For more information, see [Workload-specific prerequisites](#workload-specific-prerequisites).|
@@ -207,7 +206,7 @@ You can start a Triage Agent session from the **Sessions** page or from a new ch
 
 1. In the Microsoft Defender portal, select **Perception** > **Sessions**.
 1. Select **New session**.
-1. In the session panel, select the **Triage Agent** playbook.
+1. In the session panel, select the **Triage alert** playbook.
 1. Provide the required input:
 
    |Field|Description|
@@ -221,7 +220,7 @@ The session opens with an **In progress** status. The agent displays its reasoni
 ### Start a session from a new chat
 
 1. In the Microsoft Defender portal, select **Perception** > **New chat**.
-1. In the chat options, select the **Triage Agent** playbook.
+1. In the chat options, select the **Triage alert** playbook.
 1. Select a new alert to triage. Only supported alerts can run.
 
 In this chat option, you can also chat over the agent playbook outputs.
@@ -343,7 +342,7 @@ The page includes the following tabs:
 |Tab|Description|
 |---|---|
 |**Overview**|Displays the agent's status, playbooks, identity, permissions, and recent sessions.|
-|**Performance**|Displays key metrics about the agent's activity over time, including daily activity, mean time to triage (MTTT), and SCU consumption.|
+|**Performance**|Displays key metrics about the agent's activity over time, including daily activity and mean time to triage (MTTT).|
 
 ### Performance tab
 

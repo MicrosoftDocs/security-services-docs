@@ -64,7 +64,6 @@ Confirm the required product availability, licensing, permissions, and configura
 
 To run the Detection Authoring Agent in your environment, you need:
 
-- **Security Copilot**: Provisioned capacity in Security Compute Units (SCU). See [Get started with Security Copilot](/copilot/security/get-started-security-copilot).
 - **Plugins**: The Detection Authoring Agent automatically activates these Security Copilot plugins: Microsoft Defender XDR, Microsoft Threat Intelligence, and Microsoft Sentinel (if applicable).
 - **Unified RBAC**: Enable unified role-based access control and activate the relevant workloads for the data sources you want to query. For more information, see [Workload-specific prerequisites](/defender-xdr/security-alert-triage-agent#workload-specific-prerequisites).
 

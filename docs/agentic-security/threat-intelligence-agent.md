@@ -27,7 +27,7 @@ Threat intelligence reports are published constantly, but translating generic TI
 
 This agent analyzes threat intelligence articles and converts them into structured intelligence that security teams and other agents can consume. Rather than summarizing an article, the agent reasons over threat intelligence and environment context to extract actionable information, enriches findings with customer-specific context, and produces insights on how a specific threat applies to your organization.
 
-The Threat Intelligence Agent serves as the entry point for the multi-agent **Protect against a threat** playbook, where its output feeds directly into the Reconnaissance Agent, Posture Analysis Agent, Posture Prioritization Agent, and Detection Authoring Agent.
+The Threat Intelligence Agent serves as the entry point for the multi-agent **Protect against a threat** playbook, where its output feeds directly into the Recon Agent, Posture Prioritization Agent, and Detection Authoring Agent.
 
 Use this article to review capabilities, prerequisites, and run steps.
 
@@ -41,7 +41,7 @@ The Threat Intelligence Agent runs multi-step, AI-orchestrated analysis of threa
 - **Generates hunting queries scoped to your telemetry**: Creates KQL hunting queries tailored to your Defender XDR data sources to search for indicators of the threat.
 - **Produces prioritized defensive recommendations**: Provides actionable defensive steps ranked by impact and feasibility for your environment.
 - **Integrates with Microsoft Defender Threat Intelligence**: Enriches extracted IOCs with additional context from Microsoft Defender Threat Intelligence (MDTI) when available.
-- **Feeds downstream agents**: Provides structured intelligence that the Detection Authoring Agent, Reconnaissance Agent, and Posture agents consume in multi-agent playbooks.
+- **Feeds downstream agents**: Provides structured intelligence that the Detection Authoring Agent, Recon Agent, and Posture Prioritization Agent consume in multi-agent playbooks.
 
 ## Before you begin
 
@@ -50,7 +50,6 @@ The Threat Intelligence Agent runs multi-step, AI-orchestrated analysis of threa
 The following products are required for the Threat Intelligence Agent:
 
 - Microsoft Defender XDR
-- Microsoft Security Copilot with provisioned Security Compute Units (SCUs)
 - Microsoft Defender Threat Intelligence (MDTI) for full TI data access and enrichment
 
 ### Permissions granted to the agent
@@ -74,11 +73,12 @@ To set up this agent, follow the steps in [Set up an agent](agentic-security-get
 
 For ways to start a session, see [Start a new session](agentic-security-sessions.md#start-a-new-session).
 
-This agent runs through the following playbook:
+This agent runs through the following playbooks:
 
 | Playbook | Required input |
 |---|---|
 | **Extract threat intelligence** | A threat intelligence article URL, threat actor profile, or TI report. You can provide a URL from Microsoft Defender Threat Intelligence, a third-party TI provider, or select an article from the Defender portal. |
+| **Protect against a threat** | A threat intelligence article. |
 
 > [!NOTE]
 > You can also start this agent directly from a threat intelligence article in the Defender portal. For more information, see [Run playbooks from incidents and threat intelligence](agentic-security-integration-scenarios.md).
