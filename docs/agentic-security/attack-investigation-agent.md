@@ -11,8 +11,8 @@ ms.collection:
 - security-copilot
 - magic-ai-copilot
 ms.topic: how-to
-ms.date: 07/30/2026
-ms.custom: Project Perception, msecd-doc-authoring-1015
+ms.date: 08/10/2026
+ms.custom: Project Perception, msecd-doc-authoring-1023
 ms.update-cycle: 180-days
 ai-usage: ai-assisted
 appliesto:
@@ -68,7 +68,7 @@ Users who start an investigation also need the following permissions in Microsof
 - **Alerts (manage)**
 - **Security Copilot (read)**
 - **Email & collaboration metadata (read)**
-- **Email & collaboration content (read)**
+- **Email & collaboration content: Emails associated with alerts (read)**
 
 ### Recommended Defender configuration
 
