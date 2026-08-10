@@ -17,7 +17,7 @@ ms.topic: how-to
 search.appverid:
 - MOE150
 - MET150
-ms.date: 08/09/2026
+ms.date: 08/10/2026
 appliesto:
 - Project Perception
 ai-usage: ai-assisted
