@@ -17,12 +17,12 @@ ms.topic: how-to
 search.appverid:
 - MOE150
 - MET150
-ms.date: 07/30/2026
+ms.date: 08/09/2026
 appliesto:
 - Project Perception
 ai-usage: ai-assisted
 ms.custom: 
-- msecd-doc-authoring-1015
+- msecd-doc-authoring-1023
 - Project Perception
 #customer intent: As a security analyst, I want to learn about the Triage Agent so that I can triage and classify security incidents efficiently at scale.
 ---
@@ -35,7 +35,7 @@ Security Operations Centers (SOCs) process large volumes of alerts in multiple w
 
 The Triage Agent is an autonomous agent embedded in Microsoft Defender that helps security teams triage alerts at scale. It applies AI-driven, dynamic reasoning over evidence to deliver clear verdicts for supported security workloads. By identifying which alerts represent real attacks and which are false positives, the agent enables analysts to focus on investigating real threats, with transparent, step-by-step reasoning to support every decision.
 
-## How the Triage Agent works
+## Key capabilities
 
 The Triage Agent classifies and triages alerts in Microsoft Defender for supported workloads and alert types. The agent's key capabilities include:
 
@@ -65,10 +65,10 @@ To run the Triage Agent in your environment, you need:
 
 |Prerequisite|Details|
 |---|---|
-|**Security Copilot plugins**|The Triage Agent automatically activates these plugins: Microsoft Defender XDR, Microsoft Threat Intelligence, and Triage Agent. For more information, see [Plugins overview - Microsoft Security Copilot](/copilot/security/plugin-overview).|
 |**Alert-tuning rules**|Disable tuning rules that resolve the alerts you want the agent to triage. The agent doesn't triage resolved alerts. For more information, see [Tune an alert](/defender-xdr/investigate-alerts#tune-an-alert).|
 |**Unified RBAC**|Enable unified role-based access control and activate the relevant workloads for the alert types you want to triage. For more information, see [Workload-specific prerequisites](#workload-specific-prerequisites).|
 |**Products and licenses**|You need specific products and licenses based on the alert types you want the agent to triage. For more information, see [Workload-specific prerequisites](#workload-specific-prerequisites).|
+|**Security Copilot plugins**|The Triage Agent automatically activates these plugins: Microsoft Defender XDR, Microsoft Threat Intelligence, Triage Agent, and Phishing Triage Agent. For more information, see [Plugins overview - Microsoft Security Copilot](/copilot/security/plugin-overview).|
 
 ### Workload-specific prerequisites
 
@@ -133,7 +133,8 @@ This table outlines the permissions required to perform various actions related 
 
 |User action|Required permissions|
 |---|---|
-|**View agent results**|The same permissions as the agent (or higher), as described in [Triage Agent required permissions](#triage-agent-required-permissions).|
+|**Start sessions and view manually invoked sessions**|**Security Reader** role, as with all agents.|
+|**View automatically triggered sessions**|At minimum, users need the same permissions as the agent in Microsoft Defender XDR unified RBAC, as described in [Triage Agent required permissions](#triage-agent-required-permissions).|
 |**Configure agent** (set up, pause, remove the agent, and manage agent identity)|**Security Administrator** in **Microsoft Entra ID**.|
 |**Teach agent through feedback**|The same permissions as the agent (or higher), as described in [Triage Agent required permissions](#triage-agent-required-permissions).|
 |**View feedback page**|**Security Copilot (read)**, **Security data basics (read)**, and **Email & collaboration metadata (read)** under the **Security operations** permissions group in the Defender portal.</br></br>**OR**</br></br>**Security Administrator** in **Microsoft Entra ID**.|
@@ -167,9 +168,7 @@ The agent requires a Microsoft Entra Agent ID to operate. The setup wizard autom
 
 In alignment with [the principle of least privileges](/entra/identity-platform/secure-least-privileged-access), we recommend assigning the agent identity only the [permissions the Triage Agent requires to perform its tasks](#triage-agent-required-permissions).
 
-The dropdown only displays roles in your organization that have the permissions the agent needs. Select an existing role or automatically create a new role with the required permissions if you don't already have a suitable role.
-
-:::image type="content" source="media/triage-agent/setup-assign-entra-agent-id.PNG" alt-text="Screenshot of the Create a new agent identity screen in the Triage Agent setup wizard." lightbox="media/triage-agent/setup-assign-entra-agent-id.PNG":::
+The setup wizard automatically creates a role based on the alert types you select and the unified RBAC permissions required to access the associated data.
 
 ##### Triage Agent required permissions
 
@@ -182,51 +181,26 @@ This table summarizes the required permissions and data scopes for each alert ty
 |**Email and collaboration alerts, including phishing**|Security Copilot (read), Security data basics (read), Alerts (manage), Email & collaboration metadata (read), Email & collaboration content: Emails associated with alerts (read)|Microsoft Defender for Office 365|
 |**Cloud alerts, including containers**|Security Copilot (read), Security data basics (read), Alerts (manage)|Microsoft Defender for Cloud|
 |**Identity alerts**|Security Copilot (read), Security data basics (read), Alerts (manage)|Microsoft Defender for Identity and Microsoft Defender for Cloud Apps|
+|**Endpoint alerts**|Security Copilot (read), Security data basics (read), Alerts (manage)|Microsoft Defender for Endpoint|
+|**Cloud app alerts**|Security Copilot (read), Security data basics (read), Alerts (manage)|Microsoft Defender for Cloud Apps|
 
-These permissions are under the **Security operations** permissions group:
+These permissions are in the **Security operations** permissions group in unified RBAC:
 
-:::image type="content" source="media/triage-agent/agent-permissions.png" alt-text="Screenshot of required permissions for Alert Triage" lightbox="media/triage-agent/agent-permissions.png":::
-
-To create a role manually:
-
-1. Ensure that the relevant unified RBAC workloads are activated to allow the agent to effectively analyze alerts with comprehensive context. Follow the steps in [Workload-specific prerequisites](#workload-specific-prerequisites).
-
-1. [Create a role](/defender-xdr/create-custom-rbac-roles#create-a-custom-role) with the required permissions or assign an existing role with these permissions to the agent. Make sure to grant the role access to all of the relevant data sources based on the [supported alerts](#supported-alerts) you want to associate with the Triage Agent.
-
-1. Assign the role to the agent identity.
+:::image type="content" source="media/triage-agent/agent-permissions.png" alt-text="Screenshot of the Security operations permissions required for the Triage Agent." lightbox="media/triage-agent/agent-permissions.png":::
 
 > [!IMPORTANT]
-> After assigning the agent its permissions, ensure the user group monitoring the agent has equal or higher permissions to oversee its activity and output. To do this, compare the permissions of the user group to the agent in the Permissions page in the Microsoft Defender portal.
+> After the setup wizard assigns the agent permissions, ensure the user group monitoring the agent has equal or higher permissions to oversee its activity and output of the automatic sessions. To do this, compare the permissions of the user group to the agent in the Permissions page in the Microsoft Defender portal.
 
-## Start a Triage Agent session
 
-You can start a Triage Agent session from the **Sessions** page or from a new chat.
+## Start a session
 
-### Start a session from the Sessions page
+For ways to start a session, see [Start a new session](agentic-security-sessions.md#start-a-new-session).
 
-1. In the Microsoft Defender portal, select **Perception** > **Sessions**.
-1. Select **New session**.
-1. In the session panel, select the **Triage alert** playbook.
-1. Provide the required input:
+The Triage Agent uses the following playbook:
 
-   |Field|Description|
-   |---|---|
-   |**Alert ID**|The alert ID from the Microsoft Defender portal. You can find the ID on the alerts page. Only alerts supported by the agent appear.|
-
-1. Select **Start session**.
-
-The session opens with an **In progress** status. The agent displays its reasoning process while it drafts a task plan.
-
-### Start a session from a new chat
-
-1. In the Microsoft Defender portal, select **Perception** > **New chat**.
-1. In the chat options, select the **Triage alert** playbook.
-1. Select a new alert to triage. Only supported alerts can run.
-
-In this chat option, you can also chat over the agent playbook outputs.
-
-> [!TIP]
-> Besides triggering the Triage Agent manually, the agent is triggered automatically when a new alert is created. You can also view its analysis and how it triages the queue from the incident queue in the Microsoft Defender portal. Open an incident to see the alerts the agent triaged.
+|Playbook|Required input|
+|---|---|
+|**Triage alert**|The ID of a supported alert from the Microsoft Defender portal.|
 
 ## Automatic triggering of the Triage Agent
 
@@ -430,7 +404,7 @@ To remove the agent:
 
 ## Frequently asked questions
 
-Listed below are responses to commonly asked questions about the Triage Agent. For information about the agent's capabilities and requirements, see [How the Triage Agent works](#how-the-triage-agent-works) and [Prerequisites](#before-you-begin).
+Listed below are responses to commonly asked questions about the Triage Agent. For information about the agent's capabilities and requirements, see [Key capabilities](#key-capabilities) and [Prerequisites](#before-you-begin).
 
 ### When is the agent triggered?
 
@@ -455,6 +429,14 @@ Microsoft provides tools for organizations to maintain visibility into and contr
 Administrators configure the agent's identity and access levels during installation, following least-privilege principles. Security and IT teams can authorize specific actions, monitor performance, and review outputs directly in Microsoft Defender. Capacity consumption and data access limits are also configurable by administrators.
 
 The Triage Agent operates within a zero-trust environment. The system enforces organizational policies on every agent action by evaluating the intent and scope of each operation. All decisions, reasoning, and actions taken by the agent are transparently documented as a decision tree within Defender and recorded in Microsoft Purview audit logs for traceability and compliance.
+
+### If I have Perception, what happens to my Phishing Triage Agent? How does the new Triage Agent in Perception differ?
+
+Perception doesn't automatically change your existing Phishing Triage Agent experience. If you're participating in the Security Alert Triage Agent preview, that agent also continues to run until you set up the Perception Triage Agent.
+
+The Perception Triage Agent expands triage capabilities with additional alert types, playbooks, manual invocation, sessions, and the ability to chat about its outputs. After you set up the Perception Triage Agent, it replaces the Phishing Triage Agent and preserves the run history, metrics, and settings.
+
+Only one triage agent can be active at a time. If you remove the Perception Triage Agent, the Phishing Triage Agent becomes available to set up again.
 
 ## Related content
 
