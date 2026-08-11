@@ -31,7 +31,7 @@ ms.custom:
 
 [!INCLUDE [prerelease-warning](includes/prerelease-warning.md)]
 
-Security Operations Centers (SOCs) process large volumes of alerts in multiple workloads, each requiring different context, signals, and investigative depth. Differences in how these alerts are evaluated can lead to inconsistent triage decisions and slow the ability to distinguish real threats from false alarms. As a result, high-risk activity can be missed or delayed, while analysts spend disproportionate time filtering noise instead of acting on what matters most.
+Security Operations Centers (SOCs) process large volumes of alerts in multiple workloads, and each workload requires different context, signals, and investigative depth. Differences in how analysts evaluate these alerts can lead to inconsistent triage decisions and slow the ability to distinguish real threats from false alarms. As a result, high-risk activity can be missed or delayed, while analysts spend disproportionate time filtering noise instead of acting on what matters most.
 
 The Triage Agent is an autonomous agent embedded in Microsoft Defender that helps security teams triage alerts at scale. It applies AI-driven, dynamic reasoning over evidence to deliver clear verdicts for supported security workloads. By identifying which alerts represent real attacks and which are false positives, the agent enables analysts to focus on investigating real threats, with transparent, step-by-step reasoning to support every decision.
 
@@ -66,7 +66,7 @@ To run the Triage Agent in your environment, you need:
 |Prerequisite|Details|
 |---|---|
 |**Alert-tuning rules**|Disable tuning rules that resolve the alerts you want the agent to triage. The agent doesn't triage resolved alerts. For more information, see [Tune an alert](/defender-xdr/investigate-alerts#tune-an-alert).|
-|**Unified RBAC**|Enable unified role-based access control and activate the relevant workloads for the alert types you want to triage. For more information, see [Workload-specific prerequisites](#workload-specific-prerequisites).|
+|**Microsoft Unified RBAC**|Enable unified role-based access control and activate the relevant workloads for the alert types you want to triage. For more information, see [Workload-specific prerequisites](#workload-specific-prerequisites).|
 |**Products and licenses**|You need specific products and licenses based on the alert types you want the agent to triage. For more information, see [Workload-specific prerequisites](#workload-specific-prerequisites).|
 |**Security Copilot plugins**|The Triage Agent automatically activates these plugins: Microsoft Defender XDR, Microsoft Threat Intelligence, Triage Agent, and Phishing Triage Agent. For more information, see [Plugins overview - Microsoft Security Copilot](/copilot/security/plugin-overview).|
 
@@ -79,19 +79,19 @@ The following prerequisites depend on the alert types you want the agent to tria
 - **Product and license requirements**: The following product and license are required for email and collaboration alerts:
   - [Microsoft Defender for Office 365 Plan 2](/office365/servicedescriptions/office-365-advanced-threat-protection-service-description)
 
-- **Unified RBAC requirements**: Activate **Defender for Office 365** in Microsoft Defender XDR unified RBAC settings.
+- **Unified RBAC requirements**: Activate Microsoft Defender for Office 365 in Defender XDR unified RBAC settings.
 
   For more information, see [Activate workloads in Microsoft Defender XDR settings](/defender-xdr/activate-defender-rbac#activate-in-microsoft-defender-xdr-settings).
 
   :::image type="content" source="media/triage-agent/activate-defender-for-office-365-workloads.png" alt-text="Screenshot of the Activate unified role-based access control page showing the Defender for Office 365 toggle, which needs to be enabled for the Triage Agent." lightbox="media/triage-agent/activate-defender-for-office-365-workloads.png":::
 
-- **Configure user reported settings**: Enable **Monitor reported messages in Outlook** to define how users report potentially malicious messages in Microsoft Outlook and select any of the **Reported message destinations** options:
+- **Configure user reported settings**: Enable **Monitor reported messages in Outlook** to define how users report potentially malicious messages in Outlook and select any of the **Reported message destinations** options:
 
   :::image type="content" source="media/triage-agent/configure-user-reported-settings.png" alt-text="Screenshot of the User reported settings page showing the Outlook report button and reported message destinations configurations." lightbox="media/triage-agent/configure-user-reported-settings.png":::
 
   For more information, see [Use the Microsoft Defender portal to configure user reported settings](/defender-office-365/submissions-user-reported-messages-custom-mailbox).
 
-  If you're using a third-party email reporting tool, review [Options for third-party reporting tools](/defender-office-365/submissions-user-reported-messages-custom-mailbox) and view your vendor's configuration options to integrate reported messages with Microsoft Defender.
+  If you're using a third-party email reporting tool, review [Options for third-party reporting tools](/defender-office-365/submissions-user-reported-messages-custom-mailbox) and view your vendor's configuration options to integrate reported messages with Defender for Office 365.
 
 - **Add alert policy**: The Triage Agent addresses email and collaboration incidents that include alerts with the type **Email reported by user as malware or phish**.
 
@@ -119,7 +119,7 @@ The following prerequisites depend on the alert types you want the agent to tria
   - [Microsoft Defender for Identity](/defender-for-identity/what-is)
   - [Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps)
 
-- **Unified RBAC requirements**: Activate **Microsoft Defender for Identity** and **Microsoft Defender for Cloud Apps** in Microsoft Defender XDR unified RBAC settings.
+- **Unified RBAC requirements**: Activate Microsoft Defender for Identity and Microsoft Defender for Cloud Apps in Defender XDR unified RBAC settings.
 
   For more information, see [Activate workloads in Microsoft Defender XDR settings](/defender-xdr/activate-defender-rbac#activate-in-microsoft-defender-xdr-settings).
 
@@ -134,62 +134,62 @@ This table outlines the permissions required to perform various actions related 
 |User action|Required permissions|
 |---|---|
 |**Start sessions and view manually invoked sessions**|**Security Reader** role, as with all agents.|
-|**View automatically triggered sessions**|At minimum, users need the same permissions as the agent in Microsoft Defender XDR unified RBAC, as described in [Triage Agent required permissions](#triage-agent-required-permissions).|
+|**View automatically triggered sessions**|At minimum, users need the same permissions as the agent in Defender XDR unified RBAC, as described in [Triage Agent required permissions](#triage-agent-required-permissions).|
 |**Configure agent** (set up, pause, remove the agent, and manage agent identity)|**Security Administrator** in **Microsoft Entra ID**.|
 |**Teach agent through feedback**|The same permissions as the agent (or higher), as described in [Triage Agent required permissions](#triage-agent-required-permissions).|
-|**View feedback page**|**Security Copilot (read)**, **Security data basics (read)**, and **Email & collaboration metadata (read)** under the **Security operations** permissions group in the Defender portal.</br></br>**OR**</br></br>**Security Administrator** in **Microsoft Entra ID**.|
-|**Reject feedback**|**Security Administrator** in **Microsoft Entra ID**.|
+|**View feedback page**|**Security Copilot (read)**, **Security data basics (read)**, and **Email & collaboration metadata (read)** under the **Security operations** permissions group in the Defender portal.</br></br>**OR**</br></br>**Security Administrator** in **Entra ID**.|
+|**Reject feedback**|**Security Administrator** in **Entra ID**.|
 
 For more information about unified RBAC in the Defender portal, see [Microsoft Defender XDR Unified role-based access control (RBAC)](/defender-xdr/manage-rbac).
 
 ## Set up the Triage Agent
 
-Make sure you have the [required permissions](#permissions-required) and that all [prerequisites](#before-you-begin) are met before setting up the agent.
+Ensure you have the [required permissions](#permissions-required) and that you meet all [prerequisites](#before-you-begin) before setting up the agent.
 
 ### Begin setup
 
-1. In the Microsoft Defender portal, select **Perception** > **Agents**.
+1. In the Defender portal, select **Perception** > **Agents**.
 1. Find the **Triage Agent** in the **Agents ready for setup** section.
 1. Select **Set up**.
 1. Follow the steps in the setup wizard and select the alert types you want the agent to triage from the list of [supported alert types](#supported-alerts). Permissions and data scopes depend on that selection.
 
 ### Assign the agent's identity and permissions
 
-The setup wizard walks you through assigning the agent an identity and the permissions required to do its work.
+The setup wizard guides you through assigning the agent an identity and the permissions it needs to do its work.
 
 #### Assign an identity
 
-The agent requires a Microsoft Entra Agent ID to operate. The setup wizard automatically creates a new Agent ID. Microsoft Entra creates Agent IDs specifically for AI agents. Using an Agent ID keeps access scoped, secure, and easier to manage. For more information, see [What are agent identities?](/entra/agent-id/identity-platform/what-is-agent-id).
+The agent needs a Microsoft Entra Agent ID to work. The setup wizard automatically creates a new Agent ID. Microsoft Entra creates Agent IDs specifically for AI agents. When you use an Agent ID, you keep access scoped, secure, and easier to manage. For more information, see [What are agent identities?](/entra/agent-id/identity-platform/what-is-agent-id).
 
 > [!NOTE]
 > You can change the agent identity after setup as described in [Edit agent settings](#edit-agent-settings).
 
 #### Assign permissions
 
-In alignment with [the principle of least privileges](/entra/identity-platform/secure-least-privileged-access), we recommend assigning the agent identity only the [permissions the Triage Agent requires to perform its tasks](#triage-agent-required-permissions).
+To follow the [principle of least privilege](/entra/identity-platform/secure-least-privileged-access), assign the agent identity only the [permissions the Triage Agent needs to perform its tasks](#triage-agent-required-permissions).
 
-The setup wizard automatically creates a role based on the alert types you select and the unified RBAC permissions required to access the associated data.
+The setup wizard automatically creates a role based on the alert types you select and the unified RBAC permissions needed to access the associated data.
 
 ##### Triage Agent required permissions
 
-The Triage Agent requires specific permissions to access the necessary data and perform its triage functions. The required permissions depend on the alert types and associated products you want the agent to work with.
+The Triage Agent needs specific permissions to access the data it needs and to perform its triage functions. The required permissions depend on the alert types and associated products you want the agent to work with.
 
 This table summarizes the required permissions and data scopes for each alert type:
 
 |Alert type|Permissions|Data scopes|
 |---|---|---|
-|**Email and collaboration alerts, including phishing**|Security Copilot (read), Security data basics (read), Alerts (manage), Email & collaboration metadata (read), Email & collaboration content: Emails associated with alerts (read)|Microsoft Defender for Office 365|
+|**Email and collaboration alerts, including phishing**|Security Copilot (read), Security data basics (read), Alerts (manage), Email & collaboration metadata (read), Email & collaboration content: Emails associated with alerts (read)|Defender for Office 365|
 |**Cloud alerts, including containers**|Security Copilot (read), Security data basics (read), Alerts (manage)|Microsoft Defender for Cloud|
-|**Identity alerts**|Security Copilot (read), Security data basics (read), Alerts (manage)|Microsoft Defender for Identity and Microsoft Defender for Cloud Apps|
+|**Identity alerts**|Security Copilot (read), Security data basics (read), Alerts (manage)|Defender for Identity and Defender for Cloud Apps|
 |**Endpoint alerts**|Security Copilot (read), Security data basics (read), Alerts (manage)|Microsoft Defender for Endpoint|
-|**Cloud app alerts**|Security Copilot (read), Security data basics (read), Alerts (manage)|Microsoft Defender for Cloud Apps|
+|**Cloud app alerts**|Security Copilot (read), Security data basics (read), Alerts (manage)|Defender for Cloud Apps|
 
 These permissions are in the **Security operations** permissions group in unified RBAC:
 
 :::image type="content" source="media/triage-agent/agent-permissions.png" alt-text="Screenshot of the Security operations permissions required for the Triage Agent." lightbox="media/triage-agent/agent-permissions.png":::
 
 > [!IMPORTANT]
-> After the setup wizard assigns the agent permissions, ensure the user group monitoring the agent has equal or higher permissions to oversee its activity and output of the automatic sessions. To do this, compare the permissions of the user group to the agent in the Permissions page in the Microsoft Defender portal.
+> After the setup wizard assigns the agent permissions, ensure the user group monitoring the agent has equal or higher permissions to oversee its activity and output of the automatic sessions. To do this, compare the permissions of the user group to the agent in the Permissions page in the Defender portal.
 
 
 ## Start a session
@@ -200,11 +200,11 @@ The Triage Agent uses the following playbook:
 
 |Playbook|Required input|
 |---|---|
-|**Triage alert**|The ID of a supported alert from the Microsoft Defender portal.|
+|**Triage alert**|The ID of a supported alert from the Defender portal.|
 
 ## Automatic triggering of the Triage Agent
 
-The agent helps security teams manage the large volume of alerts organizations receive daily by automatically triaging supported alerts and updating their classification and status in Microsoft Defender incidents.
+The agent helps security teams manage the large volume of alerts organizations receive daily by automatically triaging supported alerts and updating their classification and status in Defender incidents.
 
 ### Agent trigger and flow
 
@@ -219,9 +219,9 @@ For every alert it processes, the agent provides a detailed explanation of its v
 To maintain transparency, the agent routinely updates incident fields during the triage process. When triaging starts, the agent assigns the alert to itself and adds an **Agent** tag to the corresponding incident. Analysts can filter the incident queue to see only incidents tagged by the agent, which simplifies oversight and prioritization.
 
 > [!TIP]
-> You can also filter the incident queue using the name of the identity you assigned to the Triage Agent to see the incidents the agent is actively working on.
+> You can also filter the incident queue by using the name of the identity you assigned to the Triage Agent to see the incidents the agent is actively working on.
 
-When an alert is identified as a true threat, the Triage Agent marks it as a True Positive, allowing analysts to filter and prioritize incidents based on confirmed classifications.
+When an alert is identified as a true threat, the Triage Agent marks it as a True Positive, so analysts can filter and prioritize incidents based on confirmed classifications.
 
 :::image type="content" source="media/triage-agent/incident-queue-agent-only.png" alt-text="Screenshot of the incident queue filtered by the Triage Agent tag" lightbox="media/triage-agent/incident-queue-agent-only.png":::
 
@@ -243,7 +243,7 @@ To review the agent's findings, follow these steps:
 ## Teach the agent your organization's context through feedback
 
 > [!IMPORTANT]
-> The feedback option is currently only available for email and collaboration alerts.
+> The feedback option is currently available only for email and collaboration alerts.
 
 For supported alert types, analysts can optionally provide feedback on agent classifications in plain, natural language, with no complex configurations required. Authorized users can review feedback, evaluate it, and explicitly apply it to influence how the agent classifies similar alerts in the future. This capability is currently available for email and collaboration alerts only.
 
@@ -256,7 +256,7 @@ To provide feedback and teach the agent, follow these steps:
 
    :::image type="content" source="media/triage-agent/manage-alert-why.png" alt-text="Screenshot highlighting the classification and feedback fields in the Manage alert pane" lightbox="media/triage-agent/manage-alert-why.png":::
 
-1. To apply your feedback, select **Use this feedback to teach the agent**. You can use the [guide to writing feedback](#best-practices-for-writing-feedback) to help you craft effective input, and then choose **Evaluate feedback** to allow you to preview how the agent translates your feedback into a lesson and assess whether the outcome aligns with your intent. Additionally, the feedback evaluation performs basic safety checks to ensure that the applied feedback is relevant for the agent to use and doesn't conflict with previous feedback.
+1. To apply your feedback, select **Use this feedback to teach the agent**. You can use the [guide to writing feedback](#best-practices-for-writing-feedback) to help you craft effective input, and then choose **Evaluate feedback** to allow you to preview how the agent translates your feedback into a lesson and assess whether the outcome aligns with your intent. The feedback evaluation also performs basic safety checks to ensure that the applied feedback is relevant for the agent to use and doesn't conflict with previous feedback.
 
    > [!NOTE]
    > You can only provide feedback to the agent once per alert, and it can only be used to teach the agent how to classify email and collaboration alerts, specifically by selecting either True Positive (phishing) or False Positive (not malicious).
@@ -270,22 +270,22 @@ The agent uses stored feedback to triage and classify similar alerts in the futu
 
 Lessons provide systematic guidelines that help the agent determine whether an alert is a genuine phishing threat or a false alarm. To ensure the agent effectively incorporates your feedback, follow these best practices when providing input to the Triage Agent:
 
-1. **Ensure feedback is relevant and contextual.** Feedback should pertain only to the email currently under review. It must also align with the updated classification you've assigned.
+1. **Ensure feedback is relevant and contextual.** Feedback should pertain only to the email currently under review. It must also align with the updated classification you assign.
 1. **Be descriptive and specific.** Clearly explain the characteristics of the email. Provide relevant details like the email subject, message body, sender, or recipients to help the agent understand the context. Specific feedback with multiple details enhances effectiveness.
 1. **Ensure clarity and decisiveness.** Avoid vague or universal statements. Give feedback that's clear and actionable. Use decisive and clear identification terms.
-1. **Be consistent with previous feedback.** Ensure that new feedback aligns with what was previously provided to avoid contradictions that could confuse the agent or reduce the accuracy of its decisions. You can review all previously submitted input on the [Feedback](#view-and-manage-feedback-to-the-agent) management page.
-1. **Review the agent's interpretation of your feedback.** When you submit feedback, always verify that the feedback is accurately translated into a lesson. Confirm that the lesson reflects your intent and maintains consistency with your original input. Checking the validity of AI-generated responses to ensure they're applicable to the scenario.
+1. **Be consistent with previous feedback.** Ensure that new feedback aligns with what you previously provided to avoid contradictions that could confuse the agent or reduce the accuracy of its decisions. You can review all previously submitted input on the [Feedback](#view-and-manage-feedback-to-the-agent) management page.
+1. **Review the agent's interpretation of your feedback.** When you submit feedback, always verify that the feedback is accurately translated into a lesson. Confirm that the lesson reflects your intent and maintains consistency with your original input. Check the validity of AI-generated responses to ensure they're applicable to the scenario.
 
 Here are examples of how you can write your feedback to the agent.
 
 |Area|Examples of well-written feedback|Examples of feedback that can lead to failure|Comparison|
 |---|---|---|---|
-|Feedback about a sender|Any email claiming to be from benefits providers must originate from "@benefits.company.com".|The sender in the 2nd alert in the incident is not legitimate.|Feedback must relate to the email in the current alert and its context. It will be tied to the chosen classification (even if not mentioned explicitly in the feedback) and used for similar future alerts.|
-|Feedback about the sender and email body|Emails offering file sharing or document access should only come from our authorized provider Contoso.com.|Emails offering file sharing or document access should only come from our authorized providers.|Well-written feedback clearly states specific requirements (for example, sender domain), while vague references (for example "authorized providers") do not contain actionable information.|
-|Feedback about email subject|Any email that its subject contains a request for billing transaction is not allowed in our organization and is considered as phishing.|If the subject has a positive natural sentiment, it's legitimate.|Feedback that is descriptive and specific can be effectively validated, while subjective feedback may lead to unintended outcomes.|
-|Feedback about the email body|Emails requesting credential verification should include a reference to the specific account or service. Any generic 'verify your account' request without details should be treated as phishing.|This email should be treated as phishing.|Feedback that includes detailed information is more likely to be clearly understood, while feedback lacking detail may be interpreted in various ways and could lead to unpredictable outcomes.|
-|Feedback about a recipient and email body|This email was sent to multiple employees, and the body instructs recipients to download an 'important attachment' without describing its contents. Legitimate emails always specify attachment details.|Mass internal emails with attachments are phishing.|Feedback that highlights specific missing details commonly found in legitimate emails is more effective. Feedback that contains broad generalizations (mass emails) or vague terms (such as "internal") may lead to an excessive number of true positives.|
-|Feedback about a recipient and a domain|New contractor onboarding emails should only be sent to email addresses starting with 'v-' to ensure they are directed to the correct recipients.|Contractor emails look different from usual, so they might be phishing.|Well-written feedback clearly defines the expected recipient format, while feedback that is indecisive ("might be") and lacks clear identification criteria ("looks different from usual" without specifying what is different), makes detection unreliable.|
+|Feedback about a sender|Any email claiming to be from benefits providers must originate from "@benefits.company.com".|The sender in the second alert in the incident isn't legitimate.|Feedback must relate to the email in the current alert and its context. It's tied to the chosen classification (even if you don't mention it explicitly in the feedback) and used for similar future alerts.|
+|Feedback about the sender and email body|Emails offering file sharing or document access should only come from our authorized provider Contoso.com.|Emails offering file sharing or document access should only come from our authorized providers.|Well-written feedback clearly states specific requirements (for example, sender domain), while vague references (for example "authorized providers") don't contain actionable information.|
+|Feedback about email subject|Any email with a subject that contains a request for a billing transaction isn't allowed in our organization and is considered phishing.|If the subject has a positive natural sentiment, it's legitimate.|Descriptive and specific feedback can be effectively validated, while subjective feedback might lead to unintended outcomes.|
+|Feedback about the email body|Emails requesting credential verification should include a reference to the specific account or service. Any generic 'verify your account' request without details should be treated as phishing.|This email should be treated as phishing.|Feedback that includes detailed information is more likely to be clearly understood, while feedback lacking detail might be interpreted in various ways and could lead to unpredictable outcomes.|
+|Feedback about a recipient and email body|This email was sent to multiple employees, and the body instructs recipients to download an 'important attachment' without describing its contents. Legitimate emails always specify attachment details.|Mass internal emails with attachments are phishing.|Feedback that highlights specific missing details commonly found in legitimate emails is more effective. Feedback that contains broad generalizations (mass emails) or vague terms (such as "internal") might lead to an excessive number of true positives.|
+|Feedback about a recipient and a domain|New contractor onboarding emails should only be sent to email addresses starting with 'v-' to ensure they go to the correct recipients.|Contractor emails look different from usual, so they might be phishing.|Well-written feedback clearly defines the expected recipient format, while feedback that is indecisive ("might be") and lacks clear identification criteria ("looks different from usual" without specifying what is different), makes detection unreliable.|
 
 ### Resolve feedback failures
 
@@ -336,7 +336,7 @@ Select **Manage agent** on the card to open the **Triage Agent** page, which has
 
 ### Edit agent settings
 
-To edit the agent's settings:
+To edit the agent settings:
 
 1. Select **Perception** \> **Agents**.
 1. Look for the Triage Agent under **Agents in use**, and select **Go to agent**.
@@ -377,12 +377,12 @@ This table explains the feedback status values:
 |Not in use|The feedback was either not incorporated into the agent's memory or not marked by the user for teaching. Rejected lessons appear as "not in use" and are saved only for auditing, not for triaging and classifying incidents. For more details, select the details panel.|
 
 > [!TIP]
-> Feedback can only be managed individually. Bulk management of multiple feedback entries isn't currently supported.
+> You can only manage feedback individually. Bulk management of multiple feedback entries isn't currently supported.
 
 To view and manage user-submitted feedback:
 
-1. Select **Perception** \> **Agents**, look for the Triage Agent under **Agents in use**, and select **Go to agent**.
-1. Select the **ellipsis (...)** \> **Edit agent** at the top right corner of the page. This opens the **Edit agent** page.
+1. Select **Perception** > **Agents**, look for the Triage Agent under **Agents in use**, and select **Go to agent**.
+1. Select the **ellipsis (...)** \> **Edit agent** at the top right corner of the page. This action opens the **Edit agent** page.
 1. Select **Feedback** in the left pane to open the **Agent feedback** page.
 1. Select an entry from the feedback list to open the **Review feedback** pane.
 1. Check the details of the feedback provided, the agent's lesson, the classification changes, and other important details.
@@ -391,15 +391,15 @@ To view and manage user-submitted feedback:
 1. To reject specific feedback, select **Reject feedback**. The agent stops using the feedback in future triage decisions.
 
    > [!NOTE]
-   > To reject feedback provided, you need the **Security Administrator** role in Microsoft Entra ID.
+   > To reject feedback provided, you need the **Security Administrator** role in Entra ID.
 
 ### Remove the agent
 
-When you remove the agent, triage and classification of new incidents stop, and all feedback is deleted. However, the history of previously triaged incidents is retained for your reference.
+When you remove the agent, it stops triaging and classifying new incidents, and it deletes all feedback. However, the history of previously triaged incidents is retained for your reference.
 
 To remove the agent:
 
-1. Select **Perception** \> **Agents**, look for the Triage Agent under **Agents in use**, and select **Go to agent**.
+1. Select **Perception** > **Agents**, look for the Triage Agent under **Agents in use**, and select **Go to agent**.
 1. Select the ellipsis (...) at the top right corner of the page, and then select **Remove**.
 
 ## Frequently asked questions
@@ -408,27 +408,27 @@ Listed below are responses to commonly asked questions about the Triage Agent. F
 
 ### When is the agent triggered?
 
-This agent playbook can be triggered manually, and the agent runs automatically when a new alert is detected. Built-in tuning rules that resolve supported alert types are disabled during setup.
+You can trigger this agent playbook manually. The agent runs automatically when a new alert is detected. The setup process disables built-in tuning rules that resolve supported alert types.
 
-### Can the Triage Agent be trusted?
+### Can you trust the Triage Agent?
 
-Microsoft AI agents follow strict Responsible AI guidelines and undergo thorough reviews to ensure compliance with all AI standards and safeguards. The Triage Agent is fully incorporated into these controls. During setup, you assign the agent an identity and configure it with the minimum permissions required for its operation, ensuring that it doesn't have unnecessary permissions. All agent activities are logged in detail, with the complete flow available for review by analysts and admins at any time. Feedback provided to the agent to help it adapt to the organization's environment is logged, reflected in the system, and accessible for review and modification by admins as needed.
+Microsoft AI agents follow strict Responsible AI guidelines and undergo thorough reviews to ensure compliance with all AI standards and safeguards. The Triage Agent is fully incorporated into these controls. During setup, you assign the agent an identity and configure it with the minimum permissions required for its operation, ensuring that it doesn't have unnecessary permissions. The system logs all agent activities in detail, and analysts and admins can review the complete flow at any time. The system logs feedback provided to the agent to help it adapt to the organization's environment. Admins can review and modify this feedback as needed.
 
 ### How does the agent differ from a standard SOAR solution?
 
 While both SOAR solutions and the Triage Agent automate aspects of security operations, they use different approaches.
 
-SOAR solutions typically rely on predefined, rule-based workflows that require manual configuration and ongoing maintenance. In contrast, the Triage Agent uses reasoning-based analysis to triage alerts and record classifications within Microsoft Defender, with human oversight and optional feedback where supported.
+SOAR solutions typically rely on predefined, rule-based workflows that require manual configuration and ongoing maintenance. In contrast, the Triage Agent uses reasoning-based analysis to triage alerts and record classifications within Defender, with human oversight and optional feedback where supported.
 
-The agent operates within defined permissions and workflows in Microsoft Defender and does not replace existing investigation or response tools.
+The agent operates within defined permissions and workflows in Defender and doesn't replace existing investigation or response tools.
 
 ### What level of visibility and control do I have over the agent?
 
 Microsoft provides tools for organizations to maintain visibility into and control over the Triage Agent from deployment through ongoing operations. [The agents adhere to Microsoft's Responsible AI (RAI) standards](/copilot/security/rai-faqs-security-copilot-agents) for fairness, reliability, safety, privacy, security, inclusiveness, transparency, and accountability.
 
-Administrators configure the agent's identity and access levels during installation, following least-privilege principles. Security and IT teams can authorize specific actions, monitor performance, and review outputs directly in Microsoft Defender. Capacity consumption and data access limits are also configurable by administrators.
+Administrators configure the agent's identity and access levels during installation, following least-privilege principles. Security and IT teams can authorize specific actions, monitor performance, and review outputs directly in Defender. Administrators can also configure capacity consumption and data access limits.
 
-The Triage Agent operates within a zero-trust environment. The system enforces organizational policies on every agent action by evaluating the intent and scope of each operation. All decisions, reasoning, and actions taken by the agent are transparently documented as a decision tree within Defender and recorded in Microsoft Purview audit logs for traceability and compliance.
+The Triage Agent operates within a zero-trust environment. The system enforces organizational policies on every agent action by evaluating the intent and scope of each operation. The agent transparently documents all decisions, reasoning, and actions as a decision tree within Defender and records them in Microsoft Purview audit logs for traceability and compliance.
 
 ### If I have Perception, what happens to my Phishing Triage Agent? How does the new Triage Agent in Perception differ?
 
@@ -436,7 +436,7 @@ Perception doesn't automatically change your existing Phishing Triage Agent expe
 
 The Perception Triage Agent expands triage capabilities with additional alert types, playbooks, manual invocation, sessions, and the ability to chat about its outputs. After you set up the Perception Triage Agent, it replaces the Phishing Triage Agent and preserves the run history, metrics, and settings.
 
-Only one triage agent can be active at a time. If you remove the Perception Triage Agent, the Phishing Triage Agent becomes available to set up again.
+Only one triage agent can be active at a time. If you remove the Perception Triage Agent, you can set up the Phishing Triage Agent again.
 
 ## Related content
 
