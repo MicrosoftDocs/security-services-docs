@@ -234,4 +234,4 @@ For additional guidance or to learn more about the responsible use of Project Pe
 
 - [Microsoft AI principles](https://www.microsoft.com/ai/responsible-ai)
 - [Microsoft responsible AI resources](https://www.microsoft.com/ai/responsible-ai-resources)
-- [Microsoft Azure Learning courses on responsible AI](https://docs.microsoft.com/learn/paths/responsible-ai-business-principles/)
+
