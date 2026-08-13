@@ -96,7 +96,7 @@ landingContent:
           - text: Approve, reject, or stop agentic work
             url: agentic-security-supervise-work.md
 
-  - title: Reference
+  - title: Responsible AI
     linkLists:
       - linkListType: reference
         links:
