@@ -1,7 +1,7 @@
 ---
 title: Recon Agent
 description: Learn how the Recon Agent maps your Azure environment, builds attack paths, and identifies security gaps without executing any attacks.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium

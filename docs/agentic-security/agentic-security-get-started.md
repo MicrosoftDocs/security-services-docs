@@ -1,7 +1,7 @@
 ---
 title: Get started with Project Perception
 description: Learn how to access Project Perception, set up your first agent, enable a playbook, and start your first session in Microsoft Defender.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium

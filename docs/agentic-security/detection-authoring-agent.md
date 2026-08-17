@@ -1,7 +1,7 @@
 ---
 title: Detection Authoring Agent in Microsoft Defender
 description: Learn how the Detection Authoring Agent helps security operations teams create, refine, and validate detection rules to improve threat coverage.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.localizationpriority: medium
 ms.author: macapara
 author: mjcaparas

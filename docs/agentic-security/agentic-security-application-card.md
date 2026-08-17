@@ -1,7 +1,7 @@
 ---
 title: Application card for Project Perception
 description: Learn how Perception works, including its intended uses, limitations, evaluations, and safety mitigations.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: high
@@ -235,4 +235,3 @@ For additional guidance or to learn more about the responsible use of Project Pe
 
 - [Microsoft AI principles](https://www.microsoft.com/ai/responsible-ai)
 - [Microsoft responsible AI resources](https://www.microsoft.com/ai/responsible-ai-resources)
-

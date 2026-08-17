@@ -1,7 +1,7 @@
 ---
 title: Approve, reject, or stop agentic work
 description: Learn how to supervise agentic work by responding to approval requests, providing alternative guidance, and stopping sessions in Microsoft Defender.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium

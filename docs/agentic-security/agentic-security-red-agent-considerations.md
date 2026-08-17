@@ -1,7 +1,7 @@
 ---
 title: Red team agent considerations 
 description: Understand intended use, limitations, warning language, risks, and operational considerations for Project Perception Red team agents.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium

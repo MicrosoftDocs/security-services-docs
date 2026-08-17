@@ -1,7 +1,7 @@
 ---
 title: Attack Investigation Agent
 description: Learn how to set up and use the Attack Investigation Agent to reconstruct attacks from alerts, incidents, and related security signals.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: chrisda
 author: chrisda
 ms.localizationpriority: medium
