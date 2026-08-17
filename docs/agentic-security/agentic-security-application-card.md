@@ -9,9 +9,9 @@ ms.collection:
 - m365-security
 - tier1
 ms.topic: overview
-ms.date: 07/31/2026
+ms.date: 08/09/2026
 ai-usage: ai-assisted
-ms.custom: Project Perception
+ms.custom: Project Perception, msecd-doc-authoring-1023
 appliesto:
 - Project Perception
 #customer intent: As a security professional, I want to understand how Perception works, including its intended uses, limitations, and safety mitigations.
@@ -61,6 +61,7 @@ The following table describes the key features and capabilities of Perception an
 | --- | --- |
 | Agentic playbooks | Perception coordinates multiple specialized agents in structured sequences. The output from one agent can become input for the next, enabling end-to-end security workflows from threat intelligence through detection authoring, exposure analysis, and incident investigation. |
 | Threat intelligence extraction | The Threat Intelligence Agent analyzes threat intelligence articles and extracts structured intelligence objects including threat actor profiles, MITRE ATT&CK technique mappings, IOCs, CVEs, and KQL hunting queries. |
+| Alert triage | The Triage Agent classifies and resolves supported alerts, determines whether they represent malicious activity or false alarms, records verdicts with transparent supporting reasoning, and can learn from analyst feedback. The agent triggers automatically when a new supported alert is created and can also be started manually through the Triage alert playbook. |
 | Incident investigation | The Attack Investigation Agent performs tier-2 investigation of Defender incidents, correlating alerts and signals to reconstruct the full attack story with verdicts, timelines, attack graphs, affected entities, and remediation actions. |
 | Attack path analysis | The Recon Agent performs read-only, attacker-style analysis of Azure environments to map how an adversary could move through the environment, identifying privilege paths, choke points, and exposure risks. |
 | Identity risk assessment | The Recon Agent evaluates identity exposure by analyzing privilege relationships, sensitive identities, and lateral movement opportunities in your Azure environment. |
