@@ -65,7 +65,6 @@ To run the Triage Agent in your environment, you need:
 
 |Prerequisite|Details|
 |---|---|
-|**Security Copilot plugins**|The Triage Agent automatically activates these plugins: Microsoft Defender XDR, Microsoft Threat Intelligence, and Triage Agent. For more information, see [Plugins overview - Microsoft Security Copilot](/copilot/security/plugin-overview).|
 |**Alert-tuning rules**|Disable tuning rules that resolve the alerts you want the agent to triage. The agent doesn't triage resolved alerts. For more information, see [Tune an alert](/defender-xdr/investigate-alerts#tune-an-alert).|
 |**Microsoft Unified RBAC**|Enable unified role-based access control and activate the relevant workloads for the alert types you want to triage. For more information, see [Workload-specific prerequisites](#workload-specific-prerequisites).|
 |**Products and licenses**|You need specific products and licenses based on the alert types you want the agent to triage. For more information, see [Workload-specific prerequisites](#workload-specific-prerequisites).|
@@ -160,7 +159,7 @@ The setup wizard guides you through assigning the agent an identity and the perm
 
 #### Assign an identity
 
-The agent requires a Microsoft Entra Agent ID to operate. The setup wizard automatically creates a new Agent ID. Microsoft Entra creates Agent IDs specifically for AI agents. Using an Agent ID keeps access scoped, secure, and easier to manage. For more information, see [What are agent identities?](/entra/agent-id/identity-platform/what-is-agent-id).
+The agent needs a Microsoft Entra Agent ID to work. The setup wizard automatically creates a new Agent ID. Microsoft Entra creates Agent IDs specifically for AI agents. When you use an Agent ID, you keep access scoped, secure, and easier to manage. For more information, see [What are agent identities?](/entra/agent-id/identity-platform/what-is-agent-id).
 
 > [!NOTE]
 > You can change the agent identity after setup as described in [Edit agent settings](#edit-agent-settings).
@@ -169,7 +168,7 @@ The agent requires a Microsoft Entra Agent ID to operate. The setup wizard autom
 
 To follow the [principle of least privilege](/entra/identity-platform/secure-least-privileged-access), assign the agent identity only the [permissions the Triage Agent needs to perform its tasks](#triage-agent-required-permissions).
 
-The dropdown only displays roles in your organization that have the permissions the agent needs. Select an existing role or automatically create a new role with the required permissions if you don't already have a suitable role.
+The setup wizard automatically creates a role based on the alert types you select and the unified RBAC permissions needed to access the associated data.
 
 ##### Triage Agent required permissions
 
@@ -197,29 +196,11 @@ These permissions are in the **Security operations** permissions group in unifie
 
 For ways to start a session, see [Start a new session](agentic-security-sessions.md#start-a-new-session).
 
-1. In the Microsoft Defender portal, select **Perception** > **Sessions**.
-1. Select **New session**.
-1. In the session panel, select the **Triage alert** playbook.
-1. Provide the required input:
+The Triage Agent uses the following playbook:
 
-   |Field|Description|
-   |---|---|
-   |**Alert ID**|The alert ID from the Microsoft Defender portal. You can find the ID on the alerts page. Only alerts supported by the agent appear.|
-
-1. Select **Start session**.
-
-The session opens with an **In progress** status. The agent displays its reasoning process while it drafts a task plan.
-
-### Start a session from a new chat
-
-1. In the Microsoft Defender portal, select **Perception** > **New chat**.
-1. In the chat options, select the **Triage alert** playbook.
-1. Select a new alert to triage. Only supported alerts can run.
-
-In this chat option, you can also chat over the agent playbook outputs.
-
-> [!TIP]
-> Besides triggering the Triage Agent manually, the agent is triggered automatically when a new alert is created. You can also view its analysis and how it triages the queue from the incident queue in the Microsoft Defender portal. Open an incident to see the alerts the agent triaged.
+|Playbook|Required input|
+|---|---|
+|**Triage alert**|The ID of a supported alert from the Defender portal.|
 
 ## Automatic triggering of the Triage Agent
 
