@@ -1,7 +1,7 @@
 ---
 title: View and manage sessions in Project Perception
 description: Learn how to view, filter, and manage agentic sessions using the Sessions list and Kanban board in Microsoft Defender.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium

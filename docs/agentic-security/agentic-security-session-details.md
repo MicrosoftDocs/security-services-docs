@@ -1,7 +1,7 @@
 ---
 title: Work with a session in Project Perception
 description: Learn how to review session activity and agent outputs, interact with agents, stop work, and respond to agent requests in Microsoft Defender.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium

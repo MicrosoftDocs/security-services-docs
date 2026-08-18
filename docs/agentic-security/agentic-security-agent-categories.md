@@ -1,7 +1,7 @@
 ---
 title: Agent categories in Project Perception
 description: Learn how red team, blue team, and green team agents work together in Project Perception to expose gaps, detect threats, and harden your security posture.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium

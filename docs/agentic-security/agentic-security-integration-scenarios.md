@@ -1,7 +1,7 @@
 ---
 title: Run playbooks from incidents and threat intelligence
 description: Learn how to start agentic sessions from incident detail pages and threat intelligence articles without navigating to Project Perception first.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium

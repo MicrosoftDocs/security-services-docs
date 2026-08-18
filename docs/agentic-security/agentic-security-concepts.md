@@ -1,7 +1,7 @@
 ---
 title: Key concepts in Project Perception
 description: Understand sessions, agents, and playbooks in Project Perception.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium

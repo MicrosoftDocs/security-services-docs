@@ -1,7 +1,7 @@
 ---
 title: Work with playbooks in Project Perception
 description: Learn how to view, understand, and run playbooks to automate security operations in Microsoft Defender.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium

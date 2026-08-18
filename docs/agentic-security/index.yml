@@ -6,7 +6,7 @@ summary: Coordinated, multi-agent defense system to protect continuously, respon
 metadata:
   title: Project Perception documentation
   description: Project Perception is a coordinated, multi-agent defense system designed to help security teams protect continuously, respond faster, and reduce risk.
-  ms.service: defender-xdr
+  ms.service: project-perception
   ms.topic: landing-page
   ms.collection:
   - m365-security
@@ -96,7 +96,7 @@ landingContent:
           - text: Approve, reject, or stop agentic work
             url: agentic-security-supervise-work.md
 
-  - title: Reference
+  - title: Responsible AI
     linkLists:
       - linkListType: reference
         links:

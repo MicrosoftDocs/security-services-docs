@@ -1,7 +1,7 @@
 ---
 title: Use the Project Perception overview and navigation
 description: Learn how to use the Project Perception overview and navigate to chat, sessions, agents, and playbooks in Microsoft Defender.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium
