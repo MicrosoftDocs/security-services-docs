@@ -1,7 +1,7 @@
 ---
 title: Recon Agent
 description: Learn how the Recon Agent maps your Azure environment, builds attack paths, and identifies security gaps without executing any attacks.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium
@@ -97,7 +97,8 @@ After the Recon Agent’s Agent ID has been created, use the scripts below to as
 
 **Grant Graph API permissions**
 
-```<#
+```
+<
 .SYNOPSIS
     Assigns the set of Graph API roles required for the Recon Agent Blueprint.
 
@@ -121,7 +122,7 @@ After the Recon Agent’s Agent ID has been created, use the scripts below to as
     1. Go to the Microsoft Defender portal at https://security.microsoft.com/ -> Perception -> Agents
     2. Search for the Recon Agent and click on it to open the agent details page
     3. Copy the value under the "Identity" section
-#>
+>
 
 [CmdletBinding()]
 param(
@@ -181,7 +182,7 @@ $results | Format-Table -AutoSize
 **Grant Azure RBAC permissions**
 
 ```
-<#
+<
 .SYNOPSIS
     Assigns the set of Azure RBAC roles required for the Recon Agent Identity.
 
@@ -203,7 +204,7 @@ $results | Format-Table -AutoSize
     1. Go to the Microsoft Defender portal at https://security.microsoft.com/ -> Perception -> Agents
     2. Search for the Recon Agent and click on it to open the agent details page
     3. Copy the value under the "Identity" section
-#>
+>
 
 [CmdletBinding()]
 param(

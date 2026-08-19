@@ -1,7 +1,7 @@
 ---
 title: Posture Prioritization Agent 
 description: Learn how the Posture Prioritization Agent analyzes posture findings and produces an explainable, prioritized action plan based on risk, exploitability, exposure, asset criticality, and available signals.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium

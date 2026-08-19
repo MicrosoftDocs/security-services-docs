@@ -1,7 +1,7 @@
 ---
 title: Threat Intelligence Agent
 description: Use the Threat Intelligence Agent to analyze threat intelligence articles and profiles to extract attack patterns, indicators, and key threat objects.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: chrisda
 author: chrisda
 ms.localizationpriority: medium

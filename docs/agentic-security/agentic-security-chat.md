@@ -1,7 +1,7 @@
 ---
 title: Interact with Project Perception using chat
 description: Learn how to use chat in Project Perception to start playbooks using natural language, confirm inputs, and track agent activity inline.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium
