@@ -96,6 +96,9 @@ The Recon Agent requires two additional permission sets to perform reconnaissanc
 
 To set up this agent, follow the steps in [Set up an agent](agentic-security-get-started.md#path-2-set-up-and-run-an-agent).
 
+> [!NOTE]
+> The Recon Agent uses an agent identity (AAI) rather than an agent user identity (AUI). Current technical limitations with AUI don't support the way the Recon Agent operates with its read-only permissions.
+
 After the Recon Agent’s Agent ID has been created, use the scripts below to assign the permissions outlined in the prior section. The scripts require the Agent ID as an input.
 
 
