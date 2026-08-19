@@ -1,7 +1,7 @@
 ---
 title: Recon Agent
 description: Learn how the Recon Agent maps your Azure environment, builds attack paths, and identifies security gaps without executing any attacks.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium
@@ -77,7 +77,6 @@ The following products are essential for the optimal functioning of the Recon Ag
 - Microsoft 365 Defender XDR  
 - Defender for Cloud with Defender CSPM Plan 
 - An Azure subscription 
-- Microsoft Copilot SCU either via Microsoft 365 E5 or Security Copilot standalone access  
 
 ### Required permissions
 [!INCLUDE [permissions-table](includes/permissions-table.md)]
@@ -98,7 +97,8 @@ After the Recon Agent’s Agent ID has been created, use the scripts below to as
 
 **Grant Graph API permissions**
 
-```<#
+```
+<
 .SYNOPSIS
     Assigns the set of Graph API roles required for the Recon Agent Blueprint.
 
@@ -122,7 +122,7 @@ After the Recon Agent’s Agent ID has been created, use the scripts below to as
     1. Go to the Microsoft Defender portal at https://security.microsoft.com/ -> Perception -> Agents
     2. Search for the Recon Agent and click on it to open the agent details page
     3. Copy the value under the "Identity" section
-#>
+>
 
 [CmdletBinding()]
 param(
@@ -182,7 +182,7 @@ $results | Format-Table -AutoSize
 **Grant Azure RBAC permissions**
 
 ```
-<#
+<
 .SYNOPSIS
     Assigns the set of Azure RBAC roles required for the Recon Agent Identity.
 
@@ -204,7 +204,7 @@ $results | Format-Table -AutoSize
     1. Go to the Microsoft Defender portal at https://security.microsoft.com/ -> Perception -> Agents
     2. Search for the Recon Agent and click on it to open the agent details page
     3. Copy the value under the "Identity" section
-#>
+>
 
 [CmdletBinding()]
 param(
@@ -295,12 +295,19 @@ To set up this agent, follow the steps in [Set up an agent](agentic-security-get
 
 For ways to start a session, see [Start a new session](agentic-security-sessions.md#start-a-new-session).
 
-Use these steps to start a session:
+The Recon Agent participates in the following playbooks:
+
+| Playbook | Required input |
+|---|---|
+| **Assess identity risks** | An Azure subscription and managed identity. |
+| **Identify attack paths** | An Azure subscription. |
+| **Protect against a threat** | A threat intelligence article. |
+
+Use these steps to start an **Assess identity risks** session:
 
 1. In the navigation pane, select **Perception** > **Sessions**.
 1. Select **New session**.
-
-1. Choose one of the Recon Agent playbooks from the playbook list: **Assess identity risks**.
+1. Select the **Assess identity risks** playbook.
 
      :::image type="content" source="media/agentic-security-job.png" alt-text="Screenshot of options of jobs to complete.":::
 

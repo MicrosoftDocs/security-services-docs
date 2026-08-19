@@ -1,7 +1,7 @@
 ---
-title: Attack Investigation Agent 
+title: Attack Investigation Agent
 description: Learn how to set up and use the Attack Investigation Agent to reconstruct attacks from alerts, incidents, and related security signals.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: chrisda
 author: chrisda
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.collection:
 - security-copilot
 - magic-ai-copilot
 ms.topic: how-to
-ms.date: 07/30/2026
+ms.date: 08/05/2026
 ms.custom: Project Perception, msecd-doc-authoring-1015
 ms.update-cycle: 180-days
 ai-usage: ai-assisted
@@ -20,13 +20,13 @@ appliesto:
 #customer intent: As a security analyst, I want to use the Attack Investigation Agent in Microsoft Defender so that I can reconstruct the full attack story and produce analyst-ready insights without manual correlation work.
 ---
 
-# Attack Investigation Agent 
+# Attack Investigation Agent
 
 [!INCLUDE [prerelease-warning](includes/prerelease-warning.md)]
 
-The Attack Investigation Agent is an autonomous tier 2 investigator for security operations teams. Starting from a single alert or incident, the agent correlates signals in Microsoft Defender XDR to reconstruct the attack story, scope, and impact.
+The Attack Investigation Agent is an autonomous tier 2 investigator for security operations teams. Starting from a single alert or incident, the agent correlates signals in Microsoft Defender to reconstruct the attack story, scope, and impact.
 
-You can start an investigation with or without prior triage by an analyst or the Security Alert Triage Agent. This article describes the agent's capabilities and prerequisites. It also explains how to set up the agent, run and monitor a session, and review the results.
+You can start an investigation with or without prior triage by an analyst or the Triage Agent. This article describes the agent's capabilities and prerequisites. It also explains how to set up the agent, run and monitor a session, and review the results.
 
 ## Key capabilities
 
@@ -40,45 +40,39 @@ The Attack Investigation Agent runs a multi-step, AI-orchestrated investigation 
 
 ## Prerequisites
 
-### Required licenses and products
+### Required licenses
 
-You need all the following products to use the Attack Investigation Agent:
+To use the Attack Investigation Agent, your organization needs:
 
 - Microsoft 365 E5
 - Microsoft Defender XDR
-- Microsoft Security Copilot
 
 Your organization must also be onboarded to the Microsoft Defender data lake and unified security experience.
 
 For broader investigation coverage, the recommended products depend on the attack type:
 
-- For cloud and container attacks:
+- **Cloud and container attacks**:
   - Microsoft Defender for Cloud
   - Microsoft Defender for Containers
-- For identity attacks:
+- **Identity attacks**:
   - Microsoft Entra ID P2
   - Microsoft Defender for Identity
   - Microsoft Defender for Cloud Apps
 
-### Additional permissions required
+### Recommended role-based access control
 
-Users who start an investigation also need the following permissions in Microsoft Defender XDR unified role-based access control (RBAC):
+Use [Microsoft Defender unified role-based access control (RBAC)](/defender-xdr/manage-rbac). This configuration is recommended for investigation quality and coverage.
 
-- **Security data basics (read)** for all workloads
-- **Alerts (manage)**
-- **Security Copilot (read)**
-- **Email & collaboration metadata (read)**
-- **Email & collaboration content (read)**
+### Recommended configuration for phishing investigations
 
-### Recommended Defender configuration
+For the best coverage and investigation quality in user-reported phishing investigations, configure the following settings:
 
-To investigate user-reported phishing alerts, configure the following settings:
-
-- [Activate the Microsoft Defender for Office 365 workload](/defender-xdr/activate-defender-rbac#activate-workloads-in-microsoft-defender-xdr-settings) in unified RBAC settings.
-- Enable **Monitor reported messages in Outlook**, and select a destination for reported messages. For more information, see [Configure user reported settings](/defender-office-365/submissions-user-reported-messages-custom-mailbox).
-- Enable the **Email reported by user as malware or phish** alert policy. For more information, see [Alert policies in Microsoft Defender XDR](/defender-xdr/alert-policies).
-- Disable the built-in **Auto-Resolve - Email reported by user as malware or phish** alert tuning rule and any custom tuning rules that resolve this alert. For more information, see [Tune an alert](/defender-xdr/investigate-alerts#tune-an-alert).
-- If you use a third-party reporting tool, configure the tool so reported messages reach Microsoft Defender. For more information, see [Options for third-party reporting tools](/defender-office-365/submissions-user-reported-messages-custom-mailbox).
+- **Microsoft Defender for Office 365**: Configure the following [user reported settings](/defender-office-365/submissions-user-reported-messages-custom-mailbox):
+  - Select **Monitor reported messages in Outlook**.
+  - Configure user reported messages to go to the reporting mailbox, to Microsoft, or both. If you use a [non-Microsoft reporting tool](/defender-office-365/submissions-user-reported-messages-custom-mailbox#options-for-non-microsoft-reporting-tools), configure the tool so reported messages go to Microsoft and the reporting mailbox or to the reporting mailbox only.
+- **Microsoft Defender**:
+  - Enable the **Email reported by user as malware or phish** alert policy. For more information, see [Alert policies in Microsoft Defender](/defender-xdr/alert-policies).
+  - Disable the built-in **Auto-Resolve - Email reported by user as malware or phish** alert tuning rule and any custom tuning rules that resolve this alert. For more information, see [Tune an alert](/defender-xdr/investigate-alerts#tune-an-alert).
 
 ## Set up the agent
 
@@ -88,11 +82,11 @@ To set up this agent, follow the steps in [Set up an agent](agentic-security-get
 
 For ways to start a session, see [Start a new session](agentic-security-sessions.md#start-a-new-session).
 
-This agent runs through the following playbook:
+The Attack Investigation Agent uses the following playbook:
 
-| Playbook | Required input |
+|Playbook|Required input|
 |---|---|
-| **Investigate Incident** | The ID of a single alert or incident from the Microsoft Defender portal. |
+| **Investigate attack** | The ID of a single alert or incident from the Microsoft Defender portal. |
 
 > [!NOTE]
 > You can also start this agent directly from an alert or incident detail page in the Defender portal. For more information, see [Run playbooks from incidents and threat intelligence](agentic-security-integration-scenarios.md).
@@ -130,7 +124,7 @@ The Attack Investigation Agent produces an investigation report with the followi
 The report appears as a Markdown file in the **Artifacts** section of the session details. You can download the report to add to incident documentation or compliance records.
 
 > [!IMPORTANT]
-> Attack Investigation Agent output is AI-generated and grounded in data available through Defender XDR APIs. Always review the findings for accuracy before you make remediation decisions or communicate the findings to stakeholders.
+> Attack Investigation Agent output is AI-generated and grounded in data available through Defender APIs. Always review the findings for accuracy before you make remediation decisions or communicate the findings to stakeholders.
 
 ## Related content
 
@@ -139,4 +133,4 @@ The report appears as a Markdown file in the **Artifacts** section of the sessio
 - [Work with agents](agentic-security-agents.md)
 - [View and manage sessions](agentic-security-sessions.md)
 - [Recon Agent](recon-agent.md)
-- [Security Alert Triage Agent](triage-agent.md)
+- [Triage Agent](triage-agent.md)

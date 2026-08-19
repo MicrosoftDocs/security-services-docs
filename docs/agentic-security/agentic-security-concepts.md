@@ -1,7 +1,7 @@
 ---
 title: Key concepts in Project Perception
 description: Understand sessions, agents, and playbooks in Project Perception.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium
@@ -51,7 +51,7 @@ Key characteristics of playbooks:
 
 - **Preset by Microsoft.** The playbook list is read-only. You can't create custom playbooks in this release.
 - **Can use multiple agents.** A single playbook can involve multiple agents, and a single agent can be used by multiple playbooks.
-- **Might require an input to run.** Depending on the playbook, a session might not start until you provide the specific input it needs. For example, an *Investigate incident* playbook requires an incident ID before it can run.
+- **Might require an input to run.** Depending on the playbook, a session might not start until you provide the specific input it needs. For example, the *Investigate attack* playbook requires an incident ID before it can run.
 - **Require all agents to be enabled.** A playbook is only active when all of its required agents are set up and enabled.
 
 Perception includes the following playbooks. Some playbooks run a single agent for a focused task. Others coordinate multiple agents in sequence, where each agent's output feeds the next.

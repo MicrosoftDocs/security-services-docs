@@ -1,7 +1,7 @@
 ---
 title: Use the Project Perception overview and navigation
 description: Learn how to use the Project Perception overview and navigate to chat, sessions, agents, and playbooks in Microsoft Defender.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium
@@ -44,7 +44,7 @@ The dashboard includes the following sections:
 | **Agent activity** | Shows totals for sessions, inputs, agents used, and playbooks used. The flow diagram connects inputs to the playbooks and agents used to process them. |
 | **Recommended playbooks** | Provides playbooks that can help you coordinate agents and automate security work. Use the search box to find a playbook by name. |
 | **Session status** | Shows the progress of sessions across playbooks, grouped by statuses such as **Waiting for input**, **In progress**, **Completed**, and **Stopped**. Select **View all** to review the sessions. |
-| **Performance** | Shows per-agent usage and efficiency information, including **SCUs / activity** and **Approvals granted**. |
+| **Performance** | Shows per-agent usage and efficiency information, including activity and **Approvals granted**. |
 
 ## Navigate Project Perception
 

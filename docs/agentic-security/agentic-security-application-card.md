@@ -1,7 +1,7 @@
 ---
 title: Application card for Project Perception
 description: Learn how Perception works, including its intended uses, limitations, evaluations, and safety mitigations.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: high
@@ -9,9 +9,9 @@ ms.collection:
 - m365-security
 - tier1
 ms.topic: overview
-ms.date: 07/31/2026
+ms.date: 08/09/2026
 ai-usage: ai-assisted
-ms.custom: Project Perception
+ms.custom: Project Perception, msecd-doc-authoring-1023
 appliesto:
 - Project Perception
 #customer intent: As a security professional, I want to understand how Perception works, including its intended uses, limitations, and safety mitigations.
@@ -49,7 +49,6 @@ The following table provides a glossary of key terms related to Perception.
 | Large language model (LLM) | AI models trained on large amounts of text data to predict words in sequences. LLMs are capable of performing various tasks such as text generation, summarization, translation, classification, and more. |
 | Plan instance | A specific execution of a playbook template for a given session. The plan instance includes the actual input values provided at runtime and is specific to that session. |
 | Responsible AI | Microsoft's policy, research, and engineering practices grounded in its AI principles and operationalized through the [Responsible AI standard](https://www.microsoft.com/ai/responsible-ai). |
-| Security Compute Unit (SCU) | The unit of compute capacity used to run Perception workloads. For more information, see [Understand SCUs](/copilot/security/security-compute-units-capacity). |
 | Session | The container for all work performed by agents. Sessions capture the full context of agentic activity, including inputs, conversations, artifacts produced, and outcomes achieved. Sessions are immutable records that serve as an audit trail for agentic work. |
 
 
@@ -62,6 +61,7 @@ The following table describes the key features and capabilities of Perception an
 | --- | --- |
 | Agentic playbooks | Perception coordinates multiple specialized agents in structured sequences. The output from one agent can become input for the next, enabling end-to-end security workflows from threat intelligence through detection authoring, exposure analysis, and incident investigation. |
 | Threat intelligence extraction | The Threat Intelligence Agent analyzes threat intelligence articles and extracts structured intelligence objects including threat actor profiles, MITRE ATT&CK technique mappings, IOCs, CVEs, and KQL hunting queries. |
+| Alert triage | The Triage Agent classifies and resolves supported alerts, determines whether they represent malicious activity or false alarms, records verdicts with transparent supporting reasoning, and can learn from analyst feedback. The agent triggers automatically when a new supported alert is created and can also be started manually through the Triage alert playbook. |
 | Incident investigation | The Attack Investigation Agent performs tier-2 investigation of Defender incidents, correlating alerts and signals to reconstruct the full attack story with verdicts, timelines, attack graphs, affected entities, and remediation actions. |
 | Attack path analysis | The Recon Agent performs read-only, attacker-style analysis of Azure environments to map how an adversary could move through the environment, identifying privilege paths, choke points, and exposure risks. |
 | Identity risk assessment | The Recon Agent evaluates identity exposure by analyzing privilege relationships, sensitive identities, and lateral movement opportunities in your Azure environment. |
@@ -69,7 +69,7 @@ The following table describes the key features and capabilities of Perception an
 | Posture prioritization | The Posture Prioritization Agent ranks security posture findings by real-world risk, evaluating severity, exploitability, active exploitation status, internet reachability, asset criticality, and attack-path context. |
 | Agent governance and management | Administrators can view all enabled agents, configure agent identities and permissions. |
 | Human oversight and supervision | Users can monitor in-progress sessions, approve or reject agent actions at approval gates, stop sessions, and redirect agents with alternative guidance. Sessions surface their reasoning transparently so analysts can review, validate, or override conclusions. |
-| Performance evaluation | Administrators and security engineers can track SCU consumption, understand security outcomes, and evaluate which agents and playbooks are suitable for further automation. |
+| Performance evaluation | Administrators and security engineers can track activity, understand security outcomes, and evaluate which agents and playbooks are suitable for further automation. |
 | In context playbook triggering | Playbooks can be started from other Microsoft Defender surfaces, including incident detail pages and threat intelligence article pages, without navigating to the Playbooks page directly. |
 
 Perception operates as an agentic system. To understand agent autonomy, consider:
@@ -78,7 +78,7 @@ Perception operates as an agentic system. To understand agent autonomy, consider
 - **Access permissions**: what data, systems, or resources the agent can use
 - **Action rights**: what actions the agent is authorized to take on its own
 
-The following sections describe the core agentic capabilities that underpin how Perception agents reason, plan, remember, adapt, and extend their reach.
+The following sections describe the core agentic capabilities that underpin how Perception agents reason, plan, adapt, and extend their reach.
 
 ### Reasoning
 
@@ -103,20 +103,19 @@ Perception agents are designed to adapt based on operational context while conti
 
 - **Playbooks**: Playbooks provide reusable, parameterized workflows that coordinate one or more agents. A single agent can participate in multiple playbooks, and new playbooks can coordinate agents in novel sequences.
 - **Integration in Defender experiences**: Agentic workflows can be initiated from multiple surfaces in the Microsoft Defender portal, including incident pages and threat intelligence article pages, enabling contextual entry points without navigating to Perception directly.
-- **Case integration**: Sessions can optionally link to cases in Microsoft Defender, enabling security teams to track outcomes from both human and agent work within the same workflow.
-
 ## Intended uses
 
 Perception is designed for security professionals and IT administrators who need AI-assisted and autonomous support for security operations workflows. The following table describes the intended use cases, the playbooks that support them, and the agents involved.
 
 | Use case | Playbook | Agents |
 | --- | --- | --- |
-| **Threat intelligence extraction**: Analyze a threat intelligence article to extract structured intelligence objects for use in security operations. | Extract threat intelligence | Threat Intelligence Agent |
+| **Alert triage**: Validate an alert for false positives so real threats get further attention. | Triage alert | Triage Agent |
 | **End-to-end threat defense**: Take a threat intelligence source and produce a comprehensive defensive response, including attack path mapping, prioritized posture recommendations, and detection coverage. | Protect against a threat | Threat Intelligence Agent, Recon Agent, Posture Prioritization Agent, Detection Authoring Agent |
-| **Autonomous incident investigation**: Perform a tier-2 investigation of a Defender incident and produce a complete attack story with verdict, timeline, attack graph, affected entities, and remediation actions. | Investigate incident | Attack Investigation Agent |
+| **Autonomous incident investigation**: Perform a tier-2 investigation of a Defender incident and produce a complete attack story with verdict, timeline, attack graph, affected entities, and remediation actions. | Investigate attack | Attack Investigation Agent |
+| **Threat intelligence extraction**: Analyze a threat intelligence article to extract structured intelligence objects for use in security operations. | Extract threat intelligence | Threat Intelligence Agent |
 | **Attack path discovery**: Perform read-only, attacker-style reconnaissance on an Azure environment to discover how an adversary could move through it and reach valuable assets. | Identify attack paths | Recon Agent |
-| **Identity risk evaluation**: Evaluate identity exposure by analyzing privilege relationships, sensitive identities, and lateral movement opportunities in an Azure environment. | Assess identity risks | Recon Agent |
 | **Posture remediation prioritization**: Build a prioritized remediation plan across clouds, devices, and AI. This playbook weighs exposure, exploitability, and asset context to target the highest-risk posture gaps. | Plan for posture remediation | Posture Prioritization Agent |
+| **Identity risk evaluation**: Evaluate identity exposure by analyzing privilege relationships, sensitive identities, and lateral movement opportunities in an Azure environment. | Assess identity risks | Recon Agent |
 
 ## Models and training data
 
@@ -208,12 +207,31 @@ Perception handles data in accordance with Microsoft's data privacy and security
 
 For more information about Microsoft's data handling practices, see [Microsoft Privacy Statement](https://privacy.microsoft.com/privacystatement) and [Microsoft Trust Center](https://www.microsoft.com/trustcenter).
 
-## Providing feedback
+## Best practices for deploying and adopting Project Perception
 
-Microsoft continuously improves Perception based on customer feedback and operational data. To provide feedback on agent performance or report unexpected behavior, use the feedback controls available in the session view after an agent completes its work.
+Responsible AI is a shared commitment between Microsoft and its customers. While Microsoft builds AI applications and platform services with safety, fairness, and transparency at the core, customers play a critical role in deploying and using these technologies responsibly within their own contexts. To support this partnership, we offer the following best practices for deployers and end users to help customers implement responsible AI effectively.
+
+Deployers and end-users should:
+
+- **Exercise caution and evaluate outcomes when using Perception for consequential decisions or in sensitive domains**: Consequential decisions are those that may have a legal or significant impact on a person's access to education, employment, financial platforms, government benefits, healthcare, housing, insurance, legal platforms, or that could result in physical, psychological, or financial harm. Sensitive domains, such as financial platforms, healthcare, and housing, require particular care due to the potential for disproportionate impact on different groups of people. When using AI for decisions in these areas, make sure that impacted stakeholders can understand how decisions are made, appeal decisions, and update any relevant input data.
+- **Evaluate legal and regulatory considerations**: Customers need to evaluate potential specific legal and regulatory obligations when using any AI platforms and solutions, which may not be appropriate for use in every industry or scenario. Additionally, AI platforms or solutions are not designed for and may not be used in ways prohibited in applicable terms of service and relevant codes of conduct.
+- **Use Perception only for supported security scenarios and provide clear inputs**: Perception agents are designed for the security tasks described in the intended uses section. Don't repurpose an agent for decisions or actions outside its defined scope. Provide relevant context, such as the incident, threat intelligence article, Azure subscription, or time range, and state the security goal and any limits the agent should follow.
+- **Exercise human oversight when appropriate**: Human oversight is an important safeguard when interacting with AI applications. While we continuously improve our AI applications, AI might still make mistakes. The outputs generated may be inaccurate, incomplete, biased, misaligned, or irrelevant to your intended goals. This could happen due to various reasons, such as ambiguity in the inputs or limitations of the underlying models. As such, users should review the responses generated by Perception and verify that they match their expectations and requirements.
+- **Be aware of the risk of overreliance**: Overreliance on AI happens when users accept incorrect or incomplete AI outputs, mainly because mistakes in AI outputs may be hard to detect. For the end-user, overreliance could result in decreased productivity, loss of trust, application abandonment, financial loss, psychological harm, physical harm, among others. (e.g. a doctor accepts an incorrect AI output). In Perception, overreliance could lead to missed threats, incorrect incident conclusions, ineffective detection rules, or remediation of the wrong resources.
+- **Exercise caution when designing agentic AI in sensitive domains**: Users should exercise caution when designing and/or deploying agentic AI applications in sensitive domains where agent actions are irreversible or highly consequential. Additional precautions should also be taken when creating autonomous agentic AI as described further in either the [Microsoft Enterprise AI Services Code of Conduct](/legal/ai-code-of-conduct) (for organizations) or the Code Conduct section in the [Microsoft Services Agreement](https://www.microsoft.com/servicesagreement) (for individuals). In Perception, review proposed actions at approval gates and stop or redirect a session when the agent's reasoning or output doesn't match the intended goal.
+- **Configure, test, and monitor Perception carefully**: Grant each agent access only to the data and actions required for its defined task. Before broad deployment, test playbooks with representative scenarios and confirm that approval gates and user controls work as expected. Introduce autonomy gradually, train users on agent limitations, and regularly review session records, feedback, and security outcomes for changes in quality or behavior.
+
+- **Provide feedback when issues arise**: Microsoft continuously improves Perception based on customer feedback and operational data. To provide feedback on agent performance or report unexpected behavior, use the feedback controls available in the session view after an agent completes its work.
 
 
-## Related content
+## Learn more about Project Perception
+For additional guidance or to learn more about the responsible use of Project Perception, we recommend reviewing the following documentation:
 
 - [What is Project Perception?](agentic-security-overview.md)
 - [Key concepts in Project Perception](agentic-security-concepts.md)
+
+
+## Learn more about responsible AI
+
+- [Microsoft AI principles](https://www.microsoft.com/ai/responsible-ai)
+- [Microsoft responsible AI resources](https://www.microsoft.com/ai/responsible-ai-resources)

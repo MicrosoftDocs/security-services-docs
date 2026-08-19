@@ -1,7 +1,7 @@
 ---
 title: What is Project Perception?
 description: Learn how Project Perception helps you govern, monitor, and operate AI agents at scale.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium

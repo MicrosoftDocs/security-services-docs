@@ -1,7 +1,7 @@
 ---
 title: Posture Prioritization Agent 
 description: Learn how the Posture Prioritization Agent analyzes posture findings and produces an explainable, prioritized action plan based on risk, exploitability, exposure, asset criticality, and available signals.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium
@@ -75,7 +75,6 @@ Confirm the required product availability, licensing, permissions, and configura
 To run the Posture Prioritization Agent in your environment, you need:
 
 - Microsoft 365 E5
-- Microsoft Security Copilot
 
 
 Microsoft Defender for Cloud with Defender Cloud Security Posture Management (CSPM) enabled is required on the subscription level for Cloud signals. Enabling additional plans surfaces more posture signals for the agent to work with. For more information, see [What is Cloud Security Posture Management (CSPM)](/azure/defender-for-cloud/concept-cloud-security-posture-management).

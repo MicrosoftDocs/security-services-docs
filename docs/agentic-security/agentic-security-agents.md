@@ -1,7 +1,7 @@
 ---
 title: Work with agents in Project Perception
 description: Learn how to view, enable, configure, and manage agents in Project Perception for Microsoft Defender.
-ms.service: defender-xdr
+ms.service: project-perception
 ms.author: macapara
 author: mjcaparas
 ms.localizationpriority: medium
