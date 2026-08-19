@@ -186,7 +186,7 @@ $results | Format-Table -AutoSize
 ```
 
 
-**Grant Azure RBAC permissions** <br>
+**Grant Azure RBAC permissions** 
 
 Select the Azure subscriptions this agent should operate on. This restricts all users of this agent to only the preconfigured subscriptions. Run this script for each subscription.
 
