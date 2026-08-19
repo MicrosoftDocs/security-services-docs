@@ -205,6 +205,13 @@ Perception handles data in accordance with Microsoft's data privacy and security
 - **Agent identity and permissions**: Agents access data only through the identity and permissions the administrator configures. Agents can't access resources outside their configured scope.
 - **Audit trail**: Sessions are immutable records that log all agent activity, inputs, and outputs. These records support security audits and compliance reviews.
 
+### Prompt evaluation location
+
+Prompt evaluation location determines where prompts are processed using GPU resources. When a user submits a prompt, Perception evaluates it on GPU clusters in Azure datacenters. This setting is preselected during autoprovisioning:
+
+- If your tenant's Customer Data storage location is in the EU, prompts are processed in the EU.
+- If your tenant's Customer Data storage location isn't in the EU, prompts are processed globally in the US, UK, EU, or Australia and New Zealand, depending on locality and GPU availability.
+
 For more information about Microsoft's data handling practices, see [Microsoft Privacy Statement](https://privacy.microsoft.com/privacystatement) and [Microsoft Trust Center](https://www.microsoft.com/trustcenter).
 
 ## Best practices for deploying and adopting Project Perception
