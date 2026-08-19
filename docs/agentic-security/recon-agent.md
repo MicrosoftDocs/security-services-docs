@@ -92,6 +92,13 @@ The Recon Agent requires two additional permission sets to perform reconnaissanc
 | Privileged Role Administrator (Microsoft Entra role) | **Microsoft Graph API permissions:**<br><br>- `User.Read.All`<br>- `Organization.Read.All`<br>- `Group.Read.All`<br>- `GroupMember.Read.All`<br>- `Application.Read.All`<br>- `DelegatedPermissionGrant.Read.All`<br>- `Policy.Read.All`<br>- `RoleManagement.Read.Directory`<br>- `AuditLog.Read.All` |
 | Role Based Access Control Administrator on the subscription that is the target environment for the Recon Agent | **Azure RBAC roles (assign at subscription scope):**<br><br>- Reader<br>- Key Vault Reader<br>- Log Analytics Reader<br>- Security Reader |
 
+## Set up the Recon Agent
+
+To set up this agent, follow the steps in [Set up an agent](agentic-security-get-started.md#path-2-set-up-and-run-an-agent).
+
+> [!NOTE]
+> The Recon Agent uses an agent identity (AAI) rather than an agent user identity (AUI). Current technical limitations with AUI don't support the way the Recon Agent operates with its read-only permissions.
+
 After the Recon Agent’s Agent ID has been created, use the scripts below to assign the permissions outlined in the prior section. The scripts require the Agent ID as an input.
 
 
@@ -179,7 +186,9 @@ $results | Format-Table -AutoSize
 ```
 
 
-**Grant Azure RBAC permissions**
+**Grant Azure RBAC permissions** <br>
+
+Select the Azure subscriptions this agent should operate on. This restricts all users of this agent to only the preconfigured subscriptions. Run this script for each subscription.
 
 ```
 <
@@ -279,13 +288,6 @@ $results | Format-Table -AutoSize
 ```
 
 
-
-## Set up the Recon Agent
-
-To set up this agent, follow the steps in [Set up an agent](agentic-security-get-started.md#path-2-set-up-and-run-an-agent).
-
-> [!NOTE]
-> During setup, select the Azure subscriptions this agent should operate on. This restricts all users of this agent to only the preconfigured subscriptions. You also need to grant the agent the [permissions listed above](#additional-permissions-required) in the Azure portal.
 
 ### Allow other users access
 
