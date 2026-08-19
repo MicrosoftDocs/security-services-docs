@@ -79,7 +79,7 @@ The following warning statements should be treated as required guidance:
 - **The quality and completeness of output depend on the permissions granted to the agent identity, and insufficient access produces incomplete analysis and can cause missed attack paths or misconfiguration signals.**
 - **Agent outputs are AI-generated and can contain errors or inaccuracies; human review is always required before acting on findings.**
 - Session details and output can be visible to other authorized users depending on tenant permissions.
-- Because Red team agents are in Public Preview, capabilities are subject to change and outputs should be treated as prerelease.
+- Because Red team agents are in preview, capabilities are subject to change and outputs should be treated as prerelease.
 
 ## Risks
 
