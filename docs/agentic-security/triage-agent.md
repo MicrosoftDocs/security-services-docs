@@ -136,7 +136,7 @@ This table outlines the permissions required to perform various actions related 
 |**Start sessions and view manually invoked sessions**|**Security Reader** role, as with all agents.|
 |**View automatically triggered sessions**|At minimum, users need the same permissions as the agent in Defender XDR unified RBAC, as described in [Triage Agent required permissions](#triage-agent-required-permissions).|
 |**Configure agent** (set up, pause, remove the agent, and manage agent identity)|**Security Administrator** in **Microsoft Entra ID**.|
-|**Teach agent through feedback**|The same permissions as the agent (or higher), as described in [Triage Agent required permissions](#triage-agent-required-permissions).|
+|**Teach agent through feedback**|The same permissions as the agent (or higher), as described at [Triage Agent required permissions](#triage-agent-required-permissions).|
 |**View feedback page**|**Security Copilot (read)**, **Security data basics (read)**, and **Email & collaboration metadata (read)** under the **Security operations** permissions group in the Defender portal.</br></br>**OR**</br></br>**Security Administrator** in **Entra ID**.|
 |**Reject feedback**|**Security Administrator** in **Entra ID**.|
 
@@ -190,7 +190,6 @@ These permissions are in the **Security operations** permissions group in unifie
 
 > [!IMPORTANT]
 > After the setup wizard assigns the agent permissions, ensure the user group monitoring the agent has equal or higher permissions to oversee its activity and output of the automatic sessions. To do this, compare the permissions of the user group to the agent in the Permissions page in the Defender portal.
-
 
 ## Start a session
 
