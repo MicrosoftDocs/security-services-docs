@@ -45,7 +45,9 @@ The Attack Investigation Agent runs a multi-step, AI-orchestrated investigation 
 To use the Attack Investigation Agent, your organization needs:
 
 - Microsoft 365 E5
-- Microsoft Security Copilot
+- Microsoft Defender XDR
+
+Your organization must also be onboarded to the Microsoft Defender data lake and unified security experience.
 
 For broader investigation coverage, the recommended products depend on the attack type:
 
