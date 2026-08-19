@@ -187,6 +187,7 @@ $results | Format-Table -AutoSize
 
 
 **Grant Azure RBAC permissions**
+Select the Azure subscriptions this agent should operate on. This restricts all users of this agent to only the preconfigured subscriptions. Run this script for each subscription.
 
 ```
 <
@@ -286,9 +287,6 @@ $results | Format-Table -AutoSize
 ```
 
 
-
-> [!NOTE]
-> During setup, select the Azure subscriptions this agent should operate on. This restricts all users of this agent to only the preconfigured subscriptions. You also need to grant the agent the [permissions listed above](#additional-permissions-required) in the Azure portal.
 
 ### Allow other users access
 
