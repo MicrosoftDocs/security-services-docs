@@ -33,8 +33,6 @@ Project Perception is a new multi-agent security system designed for the realiti
 
 The intended users include SOC analysts, detection engineers, security architects, IT administrators, and security leaders such as Chief Information Security Officers (CISOs). Both traditional SOC teams and frontier security engineers who operate at scale across multiple security domains can use Perception.
 
-
-
 ## Key terms
 
 The following table provides a glossary of key terms related to Perception.
@@ -50,8 +48,6 @@ The following table provides a glossary of key terms related to Perception.
 | Plan instance | A specific execution of a playbook template for a given session. The plan instance includes the actual input values provided at runtime and is specific to that session. |
 | Responsible AI | Microsoft's policy, research, and engineering practices grounded in its AI principles and operationalized through the [Responsible AI standard](https://www.microsoft.com/ai/responsible-ai). |
 | Session | The container for all work performed by agents. Sessions capture the full context of agentic activity, including inputs, conversations, artifacts produced, and outcomes achieved. Sessions are immutable records that serve as an audit trail for agentic work. |
-
-
 
 ## Key features or capabilities
 
@@ -90,7 +86,6 @@ Agents operate against defined playbooks that instruct the agentic system to ini
 
 This design gives agents a goal-directed execution model where the system determines when and how to act to complete its task. In multi-agent playbooks, each agent's output becomes a structured input for the next agent in sequence, building progressively toward a complete result.
 
-
 ### Adaptability
 
 Perception agents are designed to adapt based on operational context while continuing to operate within the scope defined by their configured identity, permissions, and triggers.
@@ -103,6 +98,7 @@ Perception agents are designed to adapt based on operational context while conti
 
 - **Playbooks**: Playbooks provide reusable, parameterized workflows that coordinate one or more agents. A single agent can participate in multiple playbooks, and new playbooks can coordinate agents in novel sequences.
 - **Integration in Defender experiences**: Agentic workflows can be initiated from multiple surfaces in the Microsoft Defender portal, including incident pages and threat intelligence article pages, enabling contextual entry points without navigating to Perception directly.
+
 ## Intended uses
 
 Perception is designed for security professionals and IT administrators who need AI-assisted and autonomous support for security operations workflows. The following table describes the intended use cases, the playbooks that support them, and the agents involved.
@@ -230,13 +226,12 @@ Deployers and end-users should:
 
 - **Provide feedback when issues arise**: Microsoft continuously improves Perception based on customer feedback and operational data. To provide feedback on agent performance or report unexpected behavior, use the feedback controls available in the session view after an agent completes its work.
 
-
 ## Learn more about Project Perception
+
 For additional guidance or to learn more about the responsible use of Project Perception, we recommend reviewing the following documentation:
 
 - [What is Project Perception?](agentic-security-overview.md)
 - [Key concepts in Project Perception](agentic-security-concepts.md)
-
 
 ## Learn more about responsible AI
 

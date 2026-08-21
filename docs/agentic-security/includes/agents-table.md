@@ -1,5 +1,5 @@
 | Agent | Agent team | Description |
-|-------|------------|-------------|
+| --- | --- | --- |
 | **Recon Agent** | Red team | Performs attacker scouting activities to map out your environment. Use this agent to surface attack paths, choke points, valuable assets, configuration issues, and excess permissions. |
 | **Triage Agent** | Blue team | Classifies and resolves various types of alerts as true or false positives. This agent provides a detailed explanation behind its conclusions, learning from context and user feedback to improve accuracy. |
 | **Threat Intelligence Agent** | Blue team | Extracts attack patterns, indicators, and other key TI objects and analyzes them for insights on how to defend against or respond to a threat. |

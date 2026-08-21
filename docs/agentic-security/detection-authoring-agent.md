@@ -5,11 +5,11 @@ ms.service: project-perception
 ms.localizationpriority: medium
 ms.author: macapara
 author: mjcaparas
-ms.collection: 
+ms.collection:
 - m365-security
 - tier1
 - security-copilot
-- magic-ai-copilot 
+- magic-ai-copilot
 ms.topic: how-to
 ms.date: 07/31/2026
 ms.update-cycle: 180-days
@@ -20,7 +20,6 @@ appliesto:
 ---
 
 # Detection Authoring Agent in Microsoft Defender
-
 
 [!INCLUDE [prerelease-warning](includes/prerelease-warning.md)]
 
@@ -48,7 +47,7 @@ In the proactive protection workflow, the detection engineer starts from a threa
 ### Use cases
 
 | Use case | Detection Authoring Agent |
-| --------------- | ----------- |
+| --- | --- |
 | **Generate detection recommendations from threat intelligence** | Creates proposed KQL-based detections that help cover attacker behaviors identified in a threat intelligence article. |
 | **Map detection coverage to MITRE ATT&CK** | Identify which techniques are covered by existing rules and surface gaps in detection coverage. |
 | **Review detection tuning recommendations** | Provides recommendations to help detection engineers tune proposed detections for their environment. |
@@ -88,7 +87,7 @@ For ways to start a session, see [Start a new session](agentic-security-sessions
 This agent runs through the following playbook:
 
 | Playbook | Required input |
-|---|---|
+| --- | --- |
 | **Protect against a threat** | A threat intelligence article. |
 
 [!INCLUDE [manage-agent-ellipsis](includes/manage-agent-ellipsis.md)]
@@ -109,17 +108,11 @@ Within the report in the Detections section, select **Open in wizard** to open t
 
 Unlike generic detection recommendations, the agent tailors every proposal to your specific environment. It does this through three core capabilities:
 
-**Tenant-aware detection creation**
+- **Tenant-aware detection creation**: The agent identifies which tables and data sources are available in the tenant and bases its recommendations on that data. This means every proposed detection is grounded in what your environment actually collects, rather than assuming data availability that may not exist.
 
-The agent identifies which tables and data sources are available in the tenant and bases its recommendations on that data. This means every proposed detection is grounded in what your environment actually collects, rather than assuming data availability that may not exist.
+- **Detection simulation and noise estimation**: For each proposed detection, the agent runs a simulation against historical tenant data and reports the projected alert volume. This gives you an early indication of the detection's expected coverage, potential noise level, and overall quality before you deploy it.
 
-**Detection simulation and noise estimation**
-
-For each proposed detection, the agent runs a simulation against historical tenant data and reports the projected alert volume. This gives you an early indication of the detection's expected coverage, potential noise level, and overall quality before you deploy it.
-
-**Automated tenant-specific tuning**
-
-Based on simulation results, the agent identifies detections likely to be noisy and automatically suggests optimizations. By analyzing the generated alerts, it can detect recurring benign patterns and refine the rule accordingly. For example, if a specific user, device, or application appears frequently in simulated alerts and is assessed as benign, the agent may recommend excluding it from the detection logic.
+- **Automated tenant-specific tuning**: Based on simulation results, the agent identifies detections likely to be noisy and automatically suggests optimizations. By analyzing the generated alerts, it can detect recurring benign patterns and refine the rule accordingly. For example, if a specific user, device, or application appears frequently in simulated alerts and is assessed as benign, the agent may recommend excluding it from the detection logic.
 
 #### Detection categories
 
@@ -131,7 +124,6 @@ Based on the results and tenant-specific baselines, proposed detections are auto
 #### Detection provider
 
 Detections proposed by the agent are tagged with a **Provider** value of **Copilot**. You can use this property to filter and identify agent-generated detections in your custom detections list.
-
 
 ## Related content
 

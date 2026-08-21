@@ -1,5 +1,5 @@
 ---
-title: Red team agent considerations 
+title: Red team agent considerations
 description: Understand intended use, limitations, warning language, risks, and operational considerations for Project Perception Red team agents.
 ms.service: project-perception
 ms.author: macapara
@@ -20,12 +20,11 @@ ms.custom: Project Perception
 #customer intent: As a security stakeholder, I want to understand the intended uses, limitations, warnings, and operational safeguards for Red team agents so that I can deploy them safely in approved environments.
 ---
 
-# Red team agent considerations 
+# Red team agent considerations
 
 [!INCLUDE [prerelease-warning](includes/prerelease-warning.md)]
 
 This article consolidates stakeholder guidance from the Red team agents warning document and captures the required considerations for planning and operating Red team agents.
-
 
 ## Capabilities
 
