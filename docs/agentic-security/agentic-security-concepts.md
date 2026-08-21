@@ -19,7 +19,6 @@ ms.custom: Project Perception
 
 # Key concepts in Project Perception
 
-
 [!INCLUDE [prerelease-warning](includes/prerelease-warning.md)]
 
 Project Perception uses the following concepts to organize agentic work: sessions, agents, and playbooks. Understanding these concepts helps you configure, delegate, and supervise agentic operations effectively.
@@ -29,7 +28,6 @@ Project Perception uses the following concepts to organize agentic work: session
 A session is the record of an agent interaction. Sessions capture agent activity, decisions, inputs, outputs, and any approvals or human interventions. Sessions can involve a single agent or multiple agents working in coordination. Each session has a status that reflects the aggregate state of all tasks within it.
 
 For more information about sessions, see [View and manage sessions](agentic-security-sessions.md).
-
 
 ## Agents
 
@@ -58,14 +56,12 @@ Perception includes the following playbooks. Some playbooks run a single agent f
 
 [!INCLUDE [playbooks-table](includes/playbooks-table.md)]
 
-
-
 ## How the concepts relate
 
 The following table shows how the concepts work together:
 
 | Concept | Creates or uses | Example |
-|---------|-----------------|---------|
+| --- | --- | --- |
 | Sessions | Contains agent work; can be created by playbooks | A session investigating a phishing incident involves three agents working in sequence. |
 | Agents | Participates in sessions | A threat intelligence agent joins a session to research indicators of compromise. |
 | Playbooks | Creates sessions; assigns agents | A playbook for high-severity incidents creates a session with triage, investigation, and response agents. |

@@ -18,12 +18,9 @@ ms.custom: Project Perception
 
 # Work with agents in Project Perception
 
-
-
 [!INCLUDE [prerelease-warning](includes/prerelease-warning.md)]
 
 The **Agents** page displays all agents available to your organization, grouped into **Agents ready for setup** and **Agents in use**. Use this page to set up new agents, view agent details, and manage agent settings.
-
 
 ## Access the Agents page
 
@@ -32,7 +29,6 @@ To view the Agents list:
 1. Sign in to the [Microsoft Defender portal](https://security.microsoft.com).
 1. Select **Perception** in the navigation pane.
 1. Select **Agents**.
-
 
 ## View agents ready for setup
 
@@ -46,7 +42,6 @@ The **Ready for setup** section appears at the top of the Agents page when agent
 For the complete setup procedure, including identity and permission configuration, see [Set up an agent](agentic-security-get-started.md#path-2-set-up-and-run-an-agent).
 
 Some agents have additional configuration requirements. Review the documentation for the agent you want to set up before starting the setup wizard.
-
 
 ## Filter and sort the agents list
 
@@ -80,7 +75,7 @@ The **Overview** tab has a left panel and a right panel.
 **Left panel:**
 
 | Section | Description |
-|---|---|
+| --- | --- |
 | **About this agent** | A description of what the agent does and the tasks it performs. |
 | **Playbooks** | Playbooks that use this agent, with agent count. Select the link icon to open a playbook's detail page. |
 | **Permissions** | Permissions the agent needs to access data and take actions. Select **Permission details** for the full reference. |

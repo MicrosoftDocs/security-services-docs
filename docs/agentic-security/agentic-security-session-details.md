@@ -18,8 +18,6 @@ ms.custom: Project Perception
 
 # Work with a session in Project Perception
 
-
-
 [!INCLUDE [prerelease-warning](includes/prerelease-warning.md)]
 
 The session detail page shows a full record of agent work, including the conversation history, a generated summary, inputs provided, and any output files produced. Use this page to follow session progress, review results, and continue interacting with agents. For information about browsing and filtering sessions, see [View and manage sessions](agentic-security-sessions.md).

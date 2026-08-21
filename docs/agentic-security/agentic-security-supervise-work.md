@@ -18,8 +18,6 @@ ms.custom: Project Perception
 
 # Approve, reject, or stop agentic work
 
-
-
 [!INCLUDE [prerelease-warning](includes/prerelease-warning.md)]
 
 Supervising agentic work ensures agents operate within appropriate boundaries and take actions aligned with your security objectives. This article explains how to respond to agent requests, provide alternative guidance, and stop sessions when necessary.

@@ -54,7 +54,6 @@ After you submit your input, Perception reasons over your request and identifies
 - A description of what the playbook does
 - An **Input selected** section showing any inputs Perception identified or inferred from your message - for example, a related threat intelligence article or outbreak
 
-
 ## Run the playbook
 
 After you select **Run playbook**, the session starts and Perception displays live progress inline in Chat:
@@ -67,10 +66,8 @@ When the session is underway, Perception provides a confirmation message that in
 
 ## Follow up with Ask anything
 
-While the session is running or after it completes, use the **Ask anything** field at the bottom of Chat to continue the conversation. 
+While the session is running or after it completes, use the **Ask anything** field at the bottom of Chat to continue the conversation.
 You'll need to open the specific session to continue the conversation about a session. You can ask follow-up questions about a specific finding or get more details on agent activity or outputs.
-
-
 
 ## Related content
 

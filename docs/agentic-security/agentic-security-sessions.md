@@ -18,8 +18,6 @@ ms.custom: Project Perception
 
 # View and manage sessions in Project Perception
 
-
-
 [!INCLUDE [prerelease-warning](includes/prerelease-warning.md)]
 
 The **Sessions** page displays all sessions visible to you based on your access permissions. Use this page to monitor active sessions, review completed work, and start new sessions.
@@ -48,7 +46,6 @@ The Sessions page supports the following viewing modes:
 To toggle between views:
 
 1. Select **List view** or **Board view** at the top of the Sessions page.
-
 
 ## Start a new session
 

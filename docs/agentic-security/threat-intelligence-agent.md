@@ -75,10 +75,10 @@ For ways to start a session, see [Start a new session](agentic-security-sessions
 
 This agent runs through the following playbooks:
 
-| Playbook | Required input |
+|Playbook|Required input|
 |---|---|
-| **Extract threat intelligence** | A threat intelligence article URL, threat actor profile, or TI report. You can provide a URL from Microsoft Defender Threat Intelligence, a third-party TI provider, or select an article from the Defender portal. |
-| **Protect against a threat** | A threat intelligence article. |
+|**Extract threat intelligence**|A threat intelligence article URL, threat actor profile, or TI report. You can provide a URL from Microsoft Defender Threat Intelligence, a third-party TI provider, or select an article from the Defender portal.|
+|**Protect against a threat**|A threat intelligence article.|
 
 > [!NOTE]
 > You can also start this agent directly from a threat intelligence article in the Defender portal. For more information, see [Run playbooks from incidents and threat intelligence](agentic-security-integration-scenarios.md).
