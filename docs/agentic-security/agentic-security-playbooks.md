@@ -36,7 +36,7 @@ The page displays a flat list of playbooks.
 Each row in the list shows:
 
 | Column | Description |
-|--------|-------------|
+| --- | --- |
 | **Playbook name** | The name of the playbook. Select the name to open the playbook detail pane. |
 | **Description** | A brief summary of what the playbook does. |
 | **Agents** | The number of agents that run as part of the playbook. |

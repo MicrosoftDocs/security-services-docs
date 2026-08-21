@@ -18,8 +18,6 @@ ms.custom: Project Perception
 
 # Run playbooks from incidents and threat intelligence
 
-
-
 [!INCLUDE [prerelease-warning](includes/prerelease-warning.md)]
 
 Integration scenarios allow you to start agentic sessions from other areas of the Microsoft Defender portal without navigating to Project Perception first. You can run playbooks directly from incident detail pages and threat intelligence articles, streamlining your workflow and reducing context switching.
@@ -68,7 +66,7 @@ Select a session name to open its detail page in Project Perception.
 > [!NOTE]
 > The Agentic Sessions section only appears if at least one session is linked to the incident.
 
-## Run a playbook from a threat 
+## Run a playbook from a threat
 
 To start an agentic session from a threat:
 
@@ -106,7 +104,7 @@ Select a session name to open its detail page in Project Perception.
 When you use integration scenarios, the playbook menu shows only playbooks compatible with the current input type. This scoping ensures you don't see irrelevant playbooks.
 
 | Input type | Playbooks shown |
-|------------|-----------------|
+| --- | --- |
 | Incident | Only playbooks that accept incidents as required input. |
 | Threat intelligence article | Only playbooks that accept threat intelligence articles as required input. |
 

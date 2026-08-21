@@ -86,7 +86,7 @@ The Attack Investigation Agent uses the following playbook:
 
 |Playbook|Required input|
 |---|---|
-| **Investigate attack** | The ID of a single alert or incident from the Microsoft Defender portal. |
+|**Investigate attack**|The ID of a single alert or incident from the Microsoft Defender portal.|
 
 > [!NOTE]
 > You can also start this agent directly from an alert or incident detail page in the Defender portal. For more information, see [Run playbooks from incidents and threat intelligence](agentic-security-integration-scenarios.md).

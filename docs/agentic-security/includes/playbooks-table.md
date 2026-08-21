@@ -1,5 +1,5 @@
 | Playbook | Description | Participating agents |
-|----------|-------------|----------------------|
+| ---| --- | --- |
 | Triage alert | Validates an alert for false positives so real threats get further attention. | Triage Agent |
 | Protect against a threat | Multi-agent workflow that takes a threat intelligence source and produces attack path analysis, posture findings, prioritized remediation, and new detection rules. | Threat Intelligence Agent, Recon Agent, Posture Prioritization Agent, Detection Authoring Agent |
 | Investigate attack | Performs an autonomous tier-2 investigation of a Defender incident and produces a complete attack story with verdict, timeline, and remediation actions. | Attack Investigation Agent |

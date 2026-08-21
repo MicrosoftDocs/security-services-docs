@@ -18,8 +18,6 @@ ms.custom: Project Perception
 
 # Use the Project Perception overview and navigation
 
-
-
 [!INCLUDE [prerelease-warning](includes/prerelease-warning.md)]
 
 Project Perception provides a central view of agent activity and access to chats, sessions, agents, and playbooks. This article describes how to use the overview and navigate the main sections.
@@ -39,7 +37,7 @@ The **Overview** dashboard summarizes Project Perception activity for the select
 The dashboard includes the following sections:
 
 | Section | Description |
-|---|---|
+| --- | --- |
 | **Waiting for input** | Shows sessions that need your attention. Select **View sessions** to review and respond to pending requests. If no sessions need input, the section displays an empty state. |
 | **Agent activity** | Shows totals for sessions, inputs, agents used, and playbooks used. The flow diagram connects inputs to the playbooks and agents used to process them. |
 | **Recommended playbooks** | Provides playbooks that can help you coordinate agents and automate security work. Use the search box to find a playbook by name. |
@@ -51,7 +49,7 @@ The dashboard includes the following sections:
 Project Perception contains the following sections:
 
 | Section | Description |
-|---|---|
+| --- | --- |
 | **Overview** | Dashboard for monitoring agent activity, sessions that need attention, recommended playbooks, session status, and agent performance. |
 | **New Chat** | Conversational interface for starting playbooks and interacting with agents using natural language. |
 | **Sessions** | List of all sessions across all agents, organized by status. |

@@ -1,5 +1,5 @@
 ---
-title: Posture Prioritization Agent 
+title: Posture Prioritization Agent
 description: Learn how the Posture Prioritization Agent analyzes posture findings and produces an explainable, prioritized action plan based on risk, exploitability, exposure, asset criticality, and available signals.
 ms.service: project-perception
 ms.author: macapara
@@ -30,20 +30,18 @@ The agent's core value is in cutting through large volumes of posture findings t
 - **Explains the reasoning** - for every prioritized action, the agent provides the rationale, the supporting evidence, and the impact of not acting, so teams can justify decisions to stakeholders.
 - **Uses real-world risk signals** - rankings reflect real-world risk signals, not just severity scores.
 
-
 ## Why use the Posture Prioritization Agent?
 
 The Posture Prioritization Agent addresses the pre-breach side of security - the work that happens before an attack occurs. Security admins and vulnerability management teams maintain a continuous queue of posture recommendations: patch this software, fix this network configuration, close this exposure. The challenge is not a shortage of recommendations - it's knowing which ones to act on first to maximally reduce risk.
 
 The Posture Prioritization Agent reduces that manual triage burden. It ingests posture findings across your cloud assets and devices and produces a ranked action plan with explainable, risk-based prioritization. The agent does not only rank findings; it explains why each action is prioritized, what signals influenced the decision, and what evidence supports the recommendation. It also communicates the impact of not addressing each item, so teams can justify prioritization decisions to stakeholders. This reasoning is central to how security teams can trust and communicate the output.
 
-
 ## Scenarios
 
 The Posture Prioritization Agent supports the following scenarios:
 
 | | Broad posture prioritization | Threat-driven posture response |
-|---|---|---|
+| --- | --- | --- |
 | **Question it answers** | *"What should I fix first in my environment?"* | *"Am I exposed to this threat, and what should I do?"* |
 | **When to use** | Routine posture management - no specific threat in mind | A specific threat has surfaced and you need to understand your exposure |
 | **Input required** | None | Threat intelligence article URL, threat actor name, CVE, or TTPs |
@@ -60,8 +58,8 @@ Use this scenario for ongoing posture management. No threat input is required. T
 
 Use this scenario when a specific threat has surfaced and you need to understand your exposure. The agent maps threat techniques to your posture findings before prioritizing, so the output is scoped to what matters for that specific threat rather than your full posture queue.
 
-**Playbook:** Protect against a threat  
-**Required input:** A threat intelligence article URL, threat actor name, CVE, or set of TTPs
+- **Playbook:** Protect against a threat
+- **Required input:** A threat intelligence article URL, threat actor name, CVE, or set of TTPs
 
 > [!NOTE]
 > These are distinct flows with different outputs. The **Protect against a threat** playbook applies a threat-scoped lens to posture analysis before prioritization. The **Plan for posture remediation** playbook prioritizes directly against your current posture findings without a threat filter.
@@ -75,7 +73,6 @@ Confirm the required product availability, licensing, permissions, and configura
 To run the Posture Prioritization Agent in your environment, you need:
 
 - Microsoft 365 E5
-
 
 Microsoft Defender for Cloud with Defender Cloud Security Posture Management (CSPM) enabled is required on the subscription level for Cloud signals. Enabling additional plans surfaces more posture signals for the agent to work with. For more information, see [What is Cloud Security Posture Management (CSPM)](/azure/defender-for-cloud/concept-cloud-security-posture-management).
 
@@ -115,8 +112,6 @@ Use this playbook when a specific threat has surfaced and you want to understand
 4. Provide the required threat input: a threat intelligence article.
 5. Select **Start session**.
 
-
-
 ## Monitor session progress
 
 When a session starts, the agent creates a session in Project Perception. To view and manage sessions, go to **Agents**, locate the Posture Prioritization Agent under **Agents in use**, and select **Go to agent**.
@@ -129,7 +124,7 @@ The Posture Prioritization Agent page includes the following tabs:
 
 ## Understand the report
 
->[!NOTE]
+> [!NOTE]
 > Results may vary between runs. This does not mean the recommendations are incorrect. Each recommended action is evaluated against the available risk signals and evidence at the time of analysis.
 
 When a session completes, select **Summary** in the session interface to view the session summary. Full output files are also available as downloadable Markdown files in the **Outputs** section of the session details panel. The output is the primary result of a run. It contains the top exposures to prioritize to reduce risk in your environment.
@@ -146,18 +141,15 @@ The session summary includes:
 
 Full output is also available as downloadable Markdown files in the **Outputs** section of the session details panel.
 
-
 ## Preview scope and limitations
 
 The following scope and limitations apply during preview:
 
 | Scope | Details |
-|---|---|
+| --- | --- |
 | **Read-only** | The agent analyzes and recommends; it does not make changes to your environment or enforce remediation actions |
 | **Cloud and device posture** | In preview, the agent focuses on cloud assets and devices.|
 | **Defender signals only** | The agent works with posture signals available in your Defender environment. Third-party CSPM data and signals from external sources are not supported in preview.|
-
-
 
 ## Related content
 

@@ -1,5 +1,5 @@
 ---
-title: Triage Agent 
+title: Triage Agent
 description: Learn how the Triage Agent uses AI-driven reasoning to triage and classify alerts at scale, helping analysts focus on real threats.
 ms.service: project-perception
 f1.keywords:
@@ -21,7 +21,7 @@ ms.date: 08/10/2026
 appliesto:
 - Project Perception
 ai-usage: ai-assisted
-ms.custom: 
+ms.custom:
 - msecd-doc-authoring-1023
 - Project Perception
 #customer intent: As a security analyst, I want to learn about the Triage Agent so that I can triage and classify security incidents efficiently at scale.

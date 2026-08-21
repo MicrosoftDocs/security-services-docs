@@ -18,7 +18,6 @@ ms.custom: Project Perception
 
 # Get started with Project Perception
 
-
 [!INCLUDE [prerelease-warning](includes/prerelease-warning.md)]
 
 This article helps you get started with Project Perception. Before you can run agents, you need the right access and permissions. Once you're in, you have three main paths:
@@ -50,28 +49,27 @@ Your permissions determine what you can do in Project Perception:
 1. Sign in to the [Microsoft Defender portal](https://security.microsoft.com).
 1. In the navigation pane, select **Perception**.
 
-
 ## What you see when you arrive
 
-When you first access Project Perception, you land on a welcome page where you can access the chat experience or run a playbook. The playbooks will prompt you to set up the agents required to run them. 
+When you first access Project Perception, you land on a welcome page where you can access the chat experience or run a playbook. The playbooks will prompt you to set up the agents required to run them.
 
-The interface varies based on whether agents have been configured: 
+The interface varies based on whether agents have been configured:
 
-**Empty state (no sessions have been created yet)**
+**Empty state (no sessions have been created yet)**:
 
-If no Perception sessions have been created: 
-- The **Agents** page displays Perception agents in the Ready for setup section and/or enabled agents with their status and playbook counts. 
-- The **Playbooks** page shows playbooks as ready for setup and/or ready for use depending on whether any Perception agents have been set up yet. 
-- The **Sessions** list is empty. 
+If no Perception sessions have been created:
 
+- The **Agents** page displays Perception agents in the Ready for setup section and/or enabled agents with their status and playbook counts.
+- The **Playbooks** page shows playbooks as ready for setup and/or ready for use depending on whether any Perception agents have been set up yet.
+- The **Sessions** list is empty.
 
-**Active state (sessions exist)**
+**Active state (sessions exist)**:
 
-If agents are already set up: 
-- The **Agents** page lists enabled agents with their status and playbook counts. 
-- The **Playbooks** page shows playbooks ready for use. 
-- The **Sessions** list displays recent and active sessions. 
+If agents are already set up:
 
+- The **Agents** page lists enabled agents with their status and playbook counts.
+- The **Playbooks** page shows playbooks ready for use.
+- The **Sessions** list displays recent and active sessions.
 
 ## Getting started paths
 
